@@ -341,6 +341,13 @@
   }
   .card.client.has-shot p { color: #d6d0e8; }
   .card.client.has-shot .tag { background: rgba(8, 6, 20, 0.6); }
+  /* у BLOGfinity кадр тёмный и почти без деталей: затемняем слабее, текст читается за счёт тени */
+  .card.client.shot-soft {
+    background:
+      linear-gradient(180deg, rgba(8, 6, 20, 0.4) 0%, rgba(8, 6, 20, 0.6) 50%, rgba(8, 6, 20, 0.86) 100%),
+      var(--shot) center top / cover no-repeat,
+      var(--glass);
+  }
   .client-link { margin-top: auto; padding-top: 22px; font-family: var(--font-display); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--violet-bright); }
   .client-link:hover { color: #fff; }
   @media (max-width: 900px) { .work.clients { grid-template-columns: 1fr; } }
@@ -774,7 +781,7 @@
           <a class="client-link" href="https://imfinity-os.vercel.app" target="_blank" rel="noopener">imfinity-os.vercel.app ↗</a>
         </article>
 
-        <article class="card client has-shot reveal" style="--shot: url('assets/client-blogfinity.jpg')">
+        <article class="card client has-shot shot-soft reveal" style="--shot: url('assets/client-blogfinity.jpg')">
           <div class="wide" data-i18n="cl2.eyebrow">Маркетплейс · инфлюенсеры</div>
           <h3>BLOGfinity</h3>
           <p data-i18n="cl2.text">Площадка, которая соединяет проверенные бренды с проверенными креаторами в TikTok и Instagram. ИИ отсеивает накрутки и ботов, цена кампании фиксированная, без процентной комиссии. Есть кошелёк и выплаты, аналитика, семь языков. YouTube в разработке.</p>
