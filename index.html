@@ -304,6 +304,7 @@
   /* services */
   .services { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .service { display: flex; flex-direction: column; }
+  .service.full { grid-column: 1 / -1; }
   .service .icon {
     width: 48px; height: 48px;
     border-radius: 14px;
@@ -675,6 +676,18 @@
           </ul>
           <div class="price"><div class="cost"><b data-i18n="s4.price">от $110</b></div><div class="side"><span data-i18n="s4.time">$450 за 5 роликов</span></div></div>
         </article>
+
+        <article class="card service full reveal">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2.5"/><path d="M3 8h18M7 12.5h10M8.5 16.5h7"/></svg></div>
+          <h3 data-i18n="s8.title">Лендинг</h3>
+          <p data-i18n="s8.text">Одна страница под одну задачу: заявка, продажа или запись.</p>
+          <ul>
+            <li data-i18n="s8.l1">Один понятный оффер</li>
+            <li data-i18n="s8.l2">Форма заявки или кнопка записи</li>
+            <li data-i18n="s8.l3">Адаптив под телефон</li>
+          </ul>
+          <div class="price"><div class="cost"><b data-i18n="s8.price">от $220</b></div></div>
+        </article>
       </div>
 
       <div class="combo reveal">
@@ -965,6 +978,9 @@
       "s4.title": "AI video", "s4.text": "9:16 ads for Reels, TikTok and Shorts in a cinematic 3D style.",
       "s4.l1": "Script, frames and animation", "s4.l2": "Voice-over and subtitles", "s4.l3": "Your brand in the shot",
       "s4.price": "from $110", "s4.time": "$450 for 5 videos",
+      "s8.title": "Landing page", "s8.text": "One page built for one goal: a lead, a sale or a booking.",
+      "s8.l1": "One clear offer", "s8.l2": "Lead form or booking button", "s8.l3": "Mobile-friendly layout",
+      "s8.price": "from $220",
       "combo.eyebrow": "Best value", "combo.title": "Website + lead bot",
       "combo.text": "The site brings clients, the bot takes their requests and messages you on Telegram.",
       "monthly.eyebrow": "Monthly", "monthly.lead": "To keep everything running and bringing in clients after launch.",
@@ -1061,6 +1077,9 @@
       "s4.l3": "Ваш бренд у кадрі",
       "s4.price": "від $110",
       "s4.time": "$450 за 5 роликів",
+      "s8.title": "Лендінг", "s8.text": "Одна сторінка під одну мету: заявка, продаж або запис.",
+      "s8.l1": "Один зрозумілий оффер", "s8.l2": "Форма заявки або кнопка запису", "s8.l3": "Адаптив під телефон",
+      "s8.price": "від $220",
       "combo.eyebrow": "Найвигідніше",
       "combo.title": "Сайт + бот для заявок",
       "combo.text": "Сайт приводить клієнтів, бот сам приймає заявки й пише вам у Telegram.",
