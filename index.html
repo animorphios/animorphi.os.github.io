@@ -333,8 +333,16 @@
   .card.client p { color: var(--text-2); font-weight: 300; }
   .client-link { margin-top: auto; padding-top: 22px; font-family: var(--font-display); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--violet-bright); }
   .client-link:hover { color: #fff; }
-  .case-shot { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line-strong); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(124, 77, 255, 0.18); }
   @media (max-width: 900px) { .work.clients { grid-template-columns: 1fr; } }
+  .case-shot { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line-strong); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(124, 77, 255, 0.18); }
+  .reel-list { display: grid; gap: 14px; }
+  .card.reel { display: grid; grid-template-columns: 200px 1fr auto; gap: 24px; align-items: center; }
+  .reel .views b { display: block; font-family: var(--font-display); font-size: 34px; font-weight: 300; letter-spacing: 0.02em; white-space: nowrap; }
+  .reel .views span { font-family: var(--font-display); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); }
+  .reel h3 { font-family: var(--font-display); font-size: 19px; font-weight: 300; letter-spacing: 0.03em; margin: 0 0 6px; }
+  .reel p { color: var(--text-2); font-weight: 300; font-size: 14px; }
+  .reel .client-link { margin: 0; padding: 0; white-space: nowrap; }
+  @media (max-width: 900px) { .card.reel { grid-template-columns: 1fr; gap: 10px; } }
   .services.monthly { grid-template-columns: repeat(3, 1fr); }
   .combo {
     margin-top: 16px;
@@ -723,12 +731,7 @@
             <div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Next.js</span><span class="tag">Claude</span><span class="tag">Gemini</span><span class="tag">Remotion</span><span class="tag">Telegram</span></div>
           </div>
           <div class="case-visual">
-            <div class="pipeline" id="pipeline" aria-hidden="true">
-              <div data-i18n="p.1">анализ</div><div data-i18n="p.2">кадры</div><div data-i18n="p.3">сцены</div>
-              <div data-i18n="p.4">промпты</div><div data-i18n="p.5">бренд</div><div data-i18n="p.6">генерация</div>
-              <div data-i18n="p.7">контроль</div><div data-i18n="p.8">анимация</div><div data-i18n="p.9">сборка</div>
-              <div data-i18n="p.10">критик</div><div data-i18n="p.11">публикация</div><div data-i18n="p.12">обучение</div>
-            </div>
+            <img class="case-shot" src="assets/ai-video-dashboard.jpg" alt="Панель Animorphi: создание нового ролика" width="1600" height="838">
           </div>
         </article>
 
@@ -782,6 +785,54 @@
           <p data-i18n="cl4.text">ИИ-ассистенты для звонков бизнеса, входящих и исходящих. Они отвечают и переадресуют звонки, собирают заявки, записывают на приём, проводят опросы и напоминания. Интеграции с CRM и API, готовые решения для страхования, медицины, ремесла и недвижимости.</p>
           <div class="tags"><span class="tag" data-i18n="tag.voiceai">Голосовой ИИ</span><span class="tag" data-i18n="tag.crm">CRM и API</span><span class="tag" data-i18n="tag.telephony">Телефония</span></div>
           <a class="client-link" href="https://callfinity.de/en/" target="_blank" rel="noopener">callfinity.de/en ↗</a>
+        </article>
+      </div>
+
+      <div class="subhead reveal">
+        <div class="wide" data-i18n="top.eyebrow">Популярные ролики</div>
+        <p data-i18n="top.lead">Топ-5 роликов TikTok по просмотрам. Снимок от 11 октября 2026.</p>
+      </div>
+
+      <div class="reel-list">
+        <article class="card reel reveal">
+          <div class="views"><b data-i18n="top.v1">16,2 млн</b><span data-i18n="top.views">просмотров</span></div>
+          <div class="reel-text">
+            <h3>Tung Tung Tung Sahur The Father</h3>
+            <p data-i18n="top.d1">опубликовано 19 марта 2026</p>
+          </div>
+          <a class="client-link" href="https://www.tiktok.com/@animorphi/video/7619015879543508255" target="_blank" rel="noopener" data-i18n="top.watch">Смотреть в TikTok ↗</a>
+        </article>
+        <article class="card reel reveal">
+          <div class="views"><b data-i18n="top.v2">8,7 млн</b><span data-i18n="top.views">просмотров</span></div>
+          <div class="reel-text">
+            <h3>Ballerina Cappuccina gets a little too rich</h3>
+            <p data-i18n="top.d2">опубликовано 10 марта 2026</p>
+          </div>
+          <a class="client-link" href="https://www.tiktok.com/@animorphi/video/7615560716703042847" target="_blank" rel="noopener" data-i18n="top.watch">Смотреть в TikTok ↗</a>
+        </article>
+        <article class="card reel reveal">
+          <div class="views"><b data-i18n="top.v3">5,3 млн</b><span data-i18n="top.views">просмотров</span></div>
+          <div class="reel-text">
+            <h3>Ballerina’s moms</h3>
+            <p data-i18n="top.d3">опубликовано 20 марта 2026</p>
+          </div>
+          <a class="client-link" href="https://www.tiktok.com/@animorphi/video/7619461963382394142" target="_blank" rel="noopener" data-i18n="top.watch">Смотреть в TikTok ↗</a>
+        </article>
+        <article class="card reel reveal">
+          <div class="views"><b data-i18n="top.v4">4,7 млн</b><span data-i18n="top.views">просмотров</span></div>
+          <div class="reel-text">
+            <h3>Ballerina cappuccina cooking</h3>
+            <p data-i18n="top.d4">опубликовано 6 марта 2026</p>
+          </div>
+          <a class="client-link" href="https://www.tiktok.com/@animorphi/video/7614267138957675807" target="_blank" rel="noopener" data-i18n="top.watch">Смотреть в TikTok ↗</a>
+        </article>
+        <article class="card reel reveal">
+          <div class="views"><b data-i18n="top.v5">4,1 млн</b><span data-i18n="top.views">просмотров</span></div>
+          <div class="reel-text">
+            <h3>Ballerina cappuccina swap</h3>
+            <p data-i18n="top.d5">опубликовано 12 марта 2026</p>
+          </div>
+          <a class="client-link" href="https://www.tiktok.com/@animorphi/video/7616487994110774558" target="_blank" rel="noopener" data-i18n="top.watch">Смотреть в TikTok ↗</a>
         </article>
       </div>
     </div>
@@ -930,6 +981,10 @@
       "tag.marketplace": "Marketplace", "tag.antifraud": "AI anti-fraud", "tag.multilang": "Multilingual",
       "tag.realestate": "Real estate", "tag.valuation": "Free valuation", "tag.german": "German-language site",
       "tag.voiceai": "Voice AI", "tag.crm": "CRM and API", "tag.telephony": "Telephony",
+      "top.eyebrow": "Popular videos", "top.lead": "Top 5 TikTok videos by views. Snapshot from 11 October 2026.",
+      "top.v1": "16.2M", "top.v2": "8.7M", "top.v3": "5.3M", "top.v4": "4.7M", "top.v5": "4.1M", "top.views": "views",
+      "top.d1": "published 19 March 2026", "top.d2": "published 10 March 2026", "top.d3": "published 20 March 2026",
+      "top.d4": "published 6 March 2026", "top.d5": "published 12 March 2026", "top.watch": "Watch on TikTok ↗",
       "chip.1": "AI videos", "chip.2": "Dashboards", "chip.3": "Websites", "chip.4": "Automation", "chip.5": "Telegram bots",
       "process.eyebrow": "Process", "process.title": "Four steps from idea to launch",
       "st1.t": "Quick brief", "st1.p": "Message me on Telegram or WhatsApp, and we sort out the task in 15 minutes.",
@@ -1101,7 +1156,7 @@
   const stages = Array.from(document.querySelectorAll("#pipeline div"));
   if (reduceMotion) {
     stages.slice(0, 7).forEach(s => s.classList.add("on"));
-  } else {
+  } else if (stages.length) {
     let lit = 0;
     setInterval(() => {
       if (document.hidden) return;
