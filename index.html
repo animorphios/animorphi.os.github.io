@@ -324,12 +324,16 @@
   .price span { font-family: var(--font-display); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-3); }
   .price .cost { display: flex; flex-direction: column; gap: 4px; }
   .price .side { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; text-align: right; }
-  .usd { font-style: normal; font-family: var(--font-display); font-size: 12px; font-weight: 400; letter-spacing: 0.06em; color: var(--text-3); }
-  .combo .amount .usd { display: block; font-size: 13px; margin-top: 8px; }
-  .combo .amount .usd s { font-size: 12px; margin-left: 6px; }
 
   .subhead { margin: 56px 0 22px; }
   .subhead p { color: var(--text-2); font-size: 15px; font-weight: 300; margin-top: 10px; }
+  .work.clients { grid-template-columns: repeat(2, 1fr); }
+  .card.client { display: flex; flex-direction: column; }
+  .card.client h3 { font-family: var(--font-display); font-size: 22px; font-weight: 300; letter-spacing: 0.04em; margin: 14px 0 12px; }
+  .card.client p { color: var(--text-2); font-weight: 300; }
+  .client-link { margin-top: auto; padding-top: 22px; font-family: var(--font-display); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--violet-bright); }
+  .client-link:hover { color: #fff; }
+  @media (max-width: 900px) { .work.clients { grid-template-columns: 1fr; } }
   .services.monthly { grid-template-columns: repeat(3, 1fr); }
   .combo {
     margin-top: 16px;
@@ -606,7 +610,7 @@
             <li data-i18n="s1.l2">Русская и английская версии</li>
             <li data-i18n="s1.l3">Форма заявок и хостинг</li>
           </ul>
-          <div class="price"><div class="cost"><b data-i18n="s1.price">от €300</b><i class="usd">≈ $340</i></div><div class="side"><span data-i18n="s1.time">3–7 дней</span></div></div>
+          <div class="price"><div class="cost"><b data-i18n="s1.price">от $340</b></div><div class="side"><span data-i18n="s1.time">3–7 дней</span></div></div>
         </article>
 
         <article class="card service reveal">
@@ -618,7 +622,7 @@
             <li data-i18n="s2.l2">Уведомления и запись в календарь</li>
             <li data-i18n="s2.l3">Ответы на частые вопросы с ИИ</li>
           </ul>
-          <div class="price"><div class="cost"><b data-i18n="s2.price">от €500</b><i class="usd">≈ $560</i></div><div class="side"><span data-i18n="s2.time">1–2 недели</span></div></div>
+          <div class="price"><div class="cost"><b data-i18n="s2.price">от $560</b></div><div class="side"><span data-i18n="s2.time">1–2 недели</span></div></div>
         </article>
 
         <article class="card service reveal">
@@ -630,7 +634,7 @@
             <li data-i18n="s3.l2">Обновляется автоматически</li>
             <li data-i18n="s3.l3">Понятные графики без Excel</li>
           </ul>
-          <div class="price"><div class="cost"><b data-i18n="s3.price">от €400</b><i class="usd">≈ $450</i></div><div class="side"><span data-i18n="s3.time">1–2 недели</span></div></div>
+          <div class="price"><div class="cost"><b data-i18n="s3.price">от $450</b></div><div class="side"><span data-i18n="s3.time">1–2 недели</span></div></div>
         </article>
 
         <article class="card service reveal">
@@ -642,7 +646,7 @@
             <li data-i18n="s4.l2">Озвучка и субтитры</li>
             <li data-i18n="s4.l3">Ваш бренд в кадре</li>
           </ul>
-          <div class="price"><div class="cost"><b data-i18n="s4.price">от €100</b><i class="usd">≈ $110</i></div><div class="side"><span data-i18n="s4.time">€400 за 5 роликов</span><i class="usd">≈ $450</i></div></div>
+          <div class="price"><div class="cost"><b data-i18n="s4.price">от $110</b></div><div class="side"><span data-i18n="s4.time">$450 за 5 роликов</span></div></div>
         </article>
       </div>
 
@@ -652,7 +656,7 @@
           <h3 data-i18n="combo.title">Сайт + бот для заявок</h3>
           <p data-i18n="combo.text">Сайт приводит клиентов, бот сам принимает заявки и пишет вам в Telegram.</p>
         </div>
-        <div class="amount"><span class="crystal">€700</span><s>€800</s><small class="usd">≈ $780 <s>$900</s></small></div>
+        <div class="amount"><span class="crystal">$780</span><s>$900</s></div>
       </div>
 
       <div class="subhead reveal">
@@ -670,7 +674,7 @@
             <li data-i18n="s5.l2">Хостинг и обновления</li>
             <li data-i18n="s5.l3">Небольшие доработки сайта или бота</li>
           </ul>
-          <div class="price"><div class="cost"><b data-i18n="s5.price">от €50/мес</b><i class="usd">≈ $60</i></div><div class="side"><span data-i18n="s5.time">подписка</span></div></div>
+          <div class="price"><div class="cost"><b data-i18n="s5.price">от $60/мес</b></div><div class="side"><span data-i18n="s5.time">подписка</span></div></div>
         </article>
 
         <article class="card service reveal">
@@ -682,7 +686,7 @@
             <li data-i18n="s6.l2">Reels, TikTok и Shorts</li>
             <li data-i18n="s6.l3">В стиле вашего бренда</li>
           </ul>
-          <div class="price"><div class="cost"><b data-i18n="s6.price">от €400/мес</b><i class="usd">≈ $450</i></div><div class="side"><span data-i18n="s6.time">подписка</span></div></div>
+          <div class="price"><div class="cost"><b data-i18n="s6.price">от $450/мес</b></div><div class="side"><span data-i18n="s6.time">подписка</span></div></div>
         </article>
 
         <article class="card service reveal">
@@ -694,7 +698,7 @@
             <li data-i18n="s7.l2">Отвечает по прайсу и FAQ</li>
             <li data-i18n="s7.l3">Записывает клиентов</li>
           </ul>
-          <div class="price"><div class="cost"><b data-i18n="s7.price">от €600</b><i class="usd">≈ $670</i></div><div class="side"><span data-i18n="s7.time">+ €50/мес</span><i class="usd">≈ $60</i></div></div>
+          <div class="price"><div class="cost"><b data-i18n="s7.price">от $670</b></div><div class="side"><span data-i18n="s7.time">+ $60/мес</span></div></div>
         </article>
       </div>
     </div>
@@ -745,19 +749,44 @@
           </div>
         </article>
 
-        <article class="card case reveal">
-          <div class="case-body">
-            <div class="wide" data-i18n="c3.eyebrow">Для клиентов</div>
-            <h3 data-i18n="c3.title">Клиентские проекты</h3>
-            <p data-i18n="c3.text">Делал для клиентов AI-ролики для соцсетей, дашборды, сайты и автоматизацию процессов. Примеры покажу по запросу, напишите мне.</p>
-            <div style="margin-top:24px"><a class="btn btn-ghost" href="#contact" data-i18n="c3.cta">Запросить примеры</a></div>
-          </div>
-          <div class="case-visual clients">
-            <img src="assets/portal.webp" alt="" loading="lazy">
-            <div class="chips" aria-hidden="true">
-              <span data-i18n="chip.1">AI-ролики</span><span data-i18n="chip.2">Дашборды</span><span data-i18n="chip.3">Сайты</span><span data-i18n="chip.4">Автоматизация</span><span data-i18n="chip.5">Telegram-боты</span>
-            </div>
-          </div>
+      </div>
+
+      <div class="subhead reveal">
+        <div class="wide" data-i18n="clients.eyebrow">Работы для клиентов</div>
+        <p data-i18n="clients.lead">Сайты, сервисы и ИИ-системы, которые я сделал для заказчиков.</p>
+      </div>
+
+      <div class="work clients">
+        <article class="card client reveal">
+          <div class="wide" data-i18n="cl1.eyebrow">SaaS · ИИ-бизнес-планирование</div>
+          <h3>SMART Business Planner</h3>
+          <p data-i18n="cl1.text">ИИ-планировщик бизнеса. Виртуальный совет директоров (CEO, CFO, CTO, CRO) даёт вердикты по идеям, а отделы анализируют рынок, финансы, риски и дорожную карту. Первые три анализа бесплатно, без карты.</p>
+          <div class="tags"><span class="tag" data-i18n="tag.ai-agents">ИИ-агенты</span><span class="tag" data-i18n="tag.dashboard">Дашборд</span><span class="tag" data-i18n="tag.webapp">Веб-приложение</span></div>
+          <a class="client-link" href="https://imfinity-os.vercel.app" target="_blank" rel="noopener">imfinity-os.vercel.app ↗</a>
+        </article>
+
+        <article class="card client reveal">
+          <div class="wide" data-i18n="cl2.eyebrow">Маркетплейс · инфлюенсеры</div>
+          <h3>BLOGfinity</h3>
+          <p data-i18n="cl2.text">Площадка, которая соединяет проверенные бренды с проверенными креаторами в TikTok и Instagram. ИИ отсеивает накрутки и ботов, цена кампании фиксированная, без процентной комиссии. Есть кошелёк и выплаты, аналитика, семь языков. YouTube в разработке.</p>
+          <div class="tags"><span class="tag" data-i18n="tag.marketplace">Маркетплейс</span><span class="tag" data-i18n="tag.antifraud">ИИ-антифрод</span><span class="tag" data-i18n="tag.multilang">Мультиязычность</span></div>
+          <a class="client-link" href="https://blogfinity.de" target="_blank" rel="noopener">blogfinity.de ↗</a>
+        </article>
+
+        <article class="card client reveal">
+          <div class="wide" data-i18n="cl3.eyebrow">Сайт · недвижимость</div>
+          <h3>IMFINITY Immobilien</h3>
+          <p data-i18n="cl3.text">Сайт немецкой компании по недвижимости в Баден-Вюртемберге. Бесплатная онлайн-оценка объекта, продажа, аренда, покупка и инвестиции, а также услуги архитектуры и дизайна. Светлый дизайн с архитектурным визуалом на первом экране.</p>
+          <div class="tags"><span class="tag" data-i18n="tag.realestate">Недвижимость</span><span class="tag" data-i18n="tag.valuation">Бесплатная оценка</span><span class="tag" data-i18n="tag.german">На немецком</span></div>
+          <a class="client-link" href="https://imfinity.de" target="_blank" rel="noopener">imfinity.de ↗</a>
+        </article>
+
+        <article class="card client reveal">
+          <div class="wide" data-i18n="cl4.eyebrow">ИИ-телефония · голосовые ассистенты</div>
+          <h3>Callfinity AI</h3>
+          <p data-i18n="cl4.text">ИИ-ассистенты для звонков бизнеса, входящих и исходящих. Они отвечают и переадресуют звонки, собирают заявки, записывают на приём, проводят опросы и напоминания. Интеграции с CRM и API, готовые решения для страхования, медицины, ремесла и недвижимости.</p>
+          <div class="tags"><span class="tag" data-i18n="tag.voiceai">Голосовой ИИ</span><span class="tag" data-i18n="tag.crm">CRM и API</span><span class="tag" data-i18n="tag.telephony">Телефония</span></div>
+          <a class="client-link" href="https://callfinity.de/en/" target="_blank" rel="noopener">callfinity.de/en ↗</a>
         </article>
       </div>
     </div>
@@ -862,28 +891,28 @@
       "services.lead": "One-off projects and monthly services that cover most of what a small business needs online.",
       "s1.title": "Website or landing page", "s1.text": "A modern site that sells and looks great on a phone.",
       "s1.l1": "Design that fits your brand", "s1.l2": "Russian and English versions", "s1.l3": "Lead form and hosting",
-      "s1.price": "from €300", "s1.time": "3–7 days",
+      "s1.price": "from $340", "s1.time": "3–7 days",
       "s2.title": "Business automation", "s2.text": "A Telegram bot or AI assistant that answers clients and collects orders for you.",
       "s2.l1": "Orders straight into a sheet or CRM", "s2.l2": "Notifications and calendar booking", "s2.l3": "AI answers to common questions",
-      "s2.price": "from €500", "s2.time": "1–2 weeks",
+      "s2.price": "from $560", "s2.time": "1–2 weeks",
       "s3.title": "Dashboard", "s3.text": "All your business numbers on one screen, available on your phone.",
       "s3.l1": "Sales, leads, social media", "s3.l2": "Updates automatically", "s3.l3": "Clear charts instead of Excel",
-      "s3.price": "from €400", "s3.time": "1–2 weeks",
+      "s3.price": "from $450", "s3.time": "1–2 weeks",
       "s4.title": "AI video", "s4.text": "9:16 ads for Reels, TikTok and Shorts in a cinematic 3D style.",
       "s4.l1": "Script, frames and animation", "s4.l2": "Voice-over and subtitles", "s4.l3": "Your brand in the shot",
-      "s4.price": "from €100", "s4.time": "€400 for 5 videos",
+      "s4.price": "from $110", "s4.time": "$450 for 5 videos",
       "combo.eyebrow": "Best value", "combo.title": "Website + lead bot",
       "combo.text": "The site brings clients, the bot takes their requests and messages you on Telegram.",
       "monthly.eyebrow": "Monthly", "monthly.lead": "To keep everything running and bringing in clients after launch.",
       "s5.title": "Support plan", "s5.text": "Your site or bot stays in working order, and I make the changes.",
       "s5.l1": "Text, price and photo edits", "s5.l2": "Hosting and updates", "s5.l3": "Small improvements to the site or bot",
-      "s5.price": "from €50/mo", "s5.time": "subscription",
+      "s5.price": "from $60/mo", "s5.time": "subscription",
       "s6.title": "AI content subscription", "s6.text": "Fresh social media videos every month, no filming.",
       "s6.l1": "8–12 videos a month", "s6.l2": "Reels, TikTok and Shorts", "s6.l3": "In your brand's style",
-      "s6.price": "from €400/mo", "s6.time": "subscription",
+      "s6.price": "from $450/mo", "s6.time": "subscription",
       "s7.title": "AI knowledge-base assistant", "s7.text": "A bot that knows your prices and FAQ and books clients by itself.",
       "s7.l1": "In Telegram or on your site", "s7.l2": "Answers from your price list and FAQ", "s7.l3": "Books clients",
-      "s7.price": "from €600", "s7.time": "+ €50/mo",
+      "s7.price": "from $670", "s7.time": "+ $60/mo",
       "work.eyebrow": "Work", "work.title": "My own products and projects",
       "work.lead": "Complex systems I built from scratch and use myself.",
       "c1.eyebrow": "AI video · automation",
@@ -893,9 +922,19 @@
       "c2.eyebrow": "AI assistant · dashboard",
       "c2.text": "A personal AI assistant with its own memory. It understands plain speech and voice, books calendar events, tracks tasks, builds a daily plan and project summaries. Works from a laptop and a phone.",
       "hud.today": "today", "hud.r1": "Client call", "hud.r2": "Send landing page for review", "hud.r3": "Workout", "hud.input": "“call the client tomorrow at 9…”",
-      "c3.eyebrow": "For clients", "c3.title": "Client projects",
-      "c3.text": "For clients I have made AI videos for social media, dashboards, websites and process automation. Message me and I will share examples.",
-      "c3.cta": "Ask for examples",
+      "clients.eyebrow": "Client work", "clients.lead": "Websites, services and AI systems I built for clients.",
+      "cl1.eyebrow": "SaaS · AI business planning",
+      "cl1.text": "An AI business planner. A virtual executive board (CEO, CFO, CTO, CRO) gives verdicts on ideas, while agent departments analyse the market, finances, risks and roadmap. The first three analyses are free, no card needed.",
+      "cl2.eyebrow": "Marketplace · influencers",
+      "cl2.text": "A marketplace that matches verified brands with verified creators on TikTok and Instagram. AI filters out fake followers and bots, and campaign prices are fixed, with no percentage commission. Includes a wallet and payouts, analytics and seven languages. YouTube is in development.",
+      "cl3.eyebrow": "Website · real estate",
+      "cl3.text": "A website for a German real estate company in Baden-Württemberg. Free online property valuation, sales, rentals, purchases and investment, plus architecture and design services. Light design with an architectural hero image.",
+      "cl4.eyebrow": "AI phone · voice assistants",
+      "cl4.text": "AI phone assistants for inbound and outbound business calls. They answer and forward calls, collect leads, book appointments, run surveys and follow-ups. CRM and API integrations, with ready-made setups for insurance, healthcare, trades and real estate.",
+      "tag.ai-agents": "AI agents", "tag.dashboard": "Dashboard", "tag.webapp": "Web app",
+      "tag.marketplace": "Marketplace", "tag.antifraud": "AI anti-fraud", "tag.multilang": "Multilingual",
+      "tag.realestate": "Real estate", "tag.valuation": "Free valuation", "tag.german": "German-language site",
+      "tag.voiceai": "Voice AI", "tag.crm": "CRM and API", "tag.telephony": "Telephony",
       "chip.1": "AI videos", "chip.2": "Dashboards", "chip.3": "Websites", "chip.4": "Automation", "chip.5": "Telegram bots",
       "process.eyebrow": "Process", "process.title": "Four steps from idea to launch",
       "st1.t": "Quick brief", "st1.p": "Message me on Telegram or WhatsApp, and we sort out the task in 15 minutes.",
