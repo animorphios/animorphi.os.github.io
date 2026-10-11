@@ -320,6 +320,13 @@
   .service ul { list-style: none; margin: 16px 0 22px; display: grid; gap: 7px; font-size: 14px; color: var(--text-2); font-weight: 300; }
   .service li { display: flex; gap: 10px; align-items: baseline; }
   .service li::before { content: ""; flex: none; width: 5px; height: 5px; transform: rotate(45deg) translateY(-2px); background: var(--violet-bright); box-shadow: 0 0 8px var(--violet); }
+  .terms { margin-top: 16px; }
+  .terms h3 { font-family: var(--font-display); font-size: 22px; font-weight: 400; letter-spacing: 0.02em; margin: 12px 0 0; }
+  .terms-list { list-style: none; margin-top: 16px; display: grid; gap: 9px; font-size: 15px; color: var(--text-2); font-weight: 300; }
+  .terms-list li { display: flex; gap: 10px; align-items: baseline; }
+  .terms-list li::before { content: ""; flex: none; width: 5px; height: 5px; transform: rotate(45deg) translateY(-2px); background: var(--violet-bright); box-shadow: 0 0 8px var(--violet); }
+  .faq-item h3 { font-family: var(--font-display); font-size: 18px; font-weight: 400; line-height: 1.35; margin-bottom: 10px; }
+  .faq-item p { color: var(--text-2); font-size: 15px; font-weight: 300; }
   .price { margin-top: auto; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-top: 18px; border-top: 1px solid rgba(196, 181, 253, 0.08); }
   .price b { font-family: var(--font-display); font-size: 26px; font-weight: 400; white-space: nowrap; }
   .price span { font-family: var(--font-display); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-3); }
@@ -741,6 +748,21 @@
           <div class="price"><div class="cost"><b data-i18n="s7.price">от $670</b></div><div class="side"><span data-i18n="s7.time">+ $60/мес</span></div></div>
         </article>
       </div>
+
+      <div class="card terms reveal">
+        <div class="wide" data-i18n="terms.eyebrow">Условия</div>
+        <h3 data-i18n="terms.title">Условия работы</h3>
+        <ul class="terms-list">
+          <li data-i18n="terms.l1">Предоплата 50% до старта, остаток 50% после сдачи.</li>
+          <li data-i18n="terms.l2">Комбо «сайт + лид-бот»: запуск за 7 дней. Сроки остальных услуг указаны у каждой услуги и в КП.</li>
+          <li data-i18n="terms.l3">Отсчёт сроков начинается после предоплаты и получения ваших материалов.</li>
+          <li data-i18n="terms.l4">Два раунда правок входят в стоимость.</li>
+          <li data-i18n="terms.l5">30 дней после сдачи я бесплатно исправляю ошибки.</li>
+          <li data-i18n="terms.l6">Дальше по желанию поддержка от $60 в месяц.</li>
+          <li data-i18n="terms.l7">Первым двум клиентам скидка 30% в обмен на отзыв в Telegram.</li>
+          <li data-i18n="terms.l8">Все цены в долларах США.</li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -892,6 +914,34 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="wide" data-i18n="faq.eyebrow">FAQ</div>
+        <h2 data-i18n="faq.title">Частые вопросы</h2>
+      </div>
+      <div class="services faq-grid">
+        <article class="card faq-item reveal">
+          <h3 data-i18n="faq.q1">Что нужно от меня, чтобы начать?</h3>
+          <p data-i18n="faq.a1">Короткое описание задачи, ваши материалы (тексты, логотип, фото) и доступы к сервисам, с которыми будем работать. Остальное согласуем в переписке.</p>
+        </article>
+        <article class="card faq-item reveal">
+          <h3 data-i18n="faq.q2">Как устроена оплата?</h3>
+          <p data-i18n="faq.a2">50% до старта, остаток после сдачи. Способ оплаты и реквизиты согласуем перед стартом.</p>
+        </article>
+        <article class="card faq-item reveal">
+          <h3 data-i18n="faq.q3">Что входит после сдачи?</h3>
+          <p data-i18n="faq.a3">Два раунда правок и 30 дней бесплатных исправлений ошибок. Дальше по желанию поддержка от $60 в месяц.</p>
+        </article>
+        <article class="card faq-item reveal">
+          <h3 data-i18n="faq.q4">Что, если у меня уже есть сайт или бот?</h3>
+          <p data-i18n="faq.a4">Напишите, что есть и что хотите изменить. Сначала посмотрю и предложу вариант с ценой в долларах.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section id="contact">
     <div class="wrap">
@@ -981,6 +1031,24 @@
       "s8.title": "Landing page", "s8.text": "One page built for one goal: a lead, a sale or a booking.",
       "s8.l1": "One clear offer", "s8.l2": "Lead form or booking button", "s8.l3": "Mobile-friendly layout",
       "s8.price": "from $220",
+      "terms.eyebrow": "Terms", "terms.title": "Working terms",
+      "terms.l1": "50% prepayment before the start, the remaining 50% after delivery.",
+      "terms.l2": "Combo “website + lead bot”: launch in 7 days. Timing for other services is listed with each service and in the proposal.",
+      "terms.l3": "The schedule starts after the prepayment and receipt of your materials.",
+      "terms.l4": "Two rounds of revisions are included.",
+      "terms.l5": "For 30 days after delivery I fix bugs free of charge.",
+      "terms.l6": "After that, optional support from $60 a month.",
+      "terms.l7": "The first two clients get 30% off in exchange for a review on Telegram.",
+      "terms.l8": "All prices are in US dollars.",
+      "faq.eyebrow": "FAQ", "faq.title": "Frequently asked questions",
+      "faq.q1": "What do you need from me to start?",
+      "faq.a1": "A short description of the task, your materials (text, logo, photos) and access to the services we will use. We agree on the rest in our chat.",
+      "faq.q2": "How does payment work?",
+      "faq.a2": "50% before the start, the rest after delivery. We agree on the payment method and details before we begin.",
+      "faq.q3": "What is included after delivery?",
+      "faq.a3": "Two rounds of revisions and 30 days of free bug fixes. After that, optional support from $60 a month.",
+      "faq.q4": "What if I already have a website or bot?",
+      "faq.a4": "Tell me what you have and what you want to change. I will look first and suggest an option with a price in US dollars.",
       "combo.eyebrow": "Best value", "combo.title": "Website + lead bot",
       "combo.text": "The site brings clients, the bot takes their requests and messages you on Telegram.",
       "monthly.eyebrow": "Monthly", "monthly.lead": "To keep everything running and bringing in clients after launch.",
@@ -1080,6 +1148,24 @@
       "s8.title": "Лендінг", "s8.text": "Одна сторінка під одну мету: заявка, продаж або запис.",
       "s8.l1": "Один зрозумілий оффер", "s8.l2": "Форма заявки або кнопка запису", "s8.l3": "Адаптив під телефон",
       "s8.price": "від $220",
+      "terms.eyebrow": "Умови", "terms.title": "Умови роботи",
+      "terms.l1": "Передоплата 50% до старту, решта 50% після здачі.",
+      "terms.l2": "Комбо «сайт + лід-бот»: запуск за 7 днів. Терміни інших послуг вказані в кожній послузі та в КП.",
+      "terms.l3": "Відлік строків починається після передоплати та отримання ваших матеріалів.",
+      "terms.l4": "Два раунди правок входять у вартість.",
+      "terms.l5": "30 днів після здачі я безкоштовно виправляю помилки.",
+      "terms.l6": "Далі за бажанням підтримка від $60 на місяць.",
+      "terms.l7": "Першим двом клієнтам знижка 30% в обмін на відгук у Telegram.",
+      "terms.l8": "Усі ціни в доларах США.",
+      "faq.eyebrow": "FAQ", "faq.title": "Поширені питання",
+      "faq.q1": "Що потрібно від мене, щоб почати?",
+      "faq.a1": "Короткий опис завдання, ваші матеріали (тексти, логотип, фото) і доступи до сервісів, з якими будемо працювати. Решту узгодимо в листуванні.",
+      "faq.q2": "Як влаштована оплата?",
+      "faq.a2": "50% до старту, решта після здачі. Спосіб оплати та реквізити узгодимо до старту.",
+      "faq.q3": "Що входить після здачі?",
+      "faq.a3": "Два раунди правок і 30 днів безкоштовного виправлення помилок. Далі за бажанням підтримка від $60 на місяць.",
+      "faq.q4": "Що, якщо в мене вже є сайт або бот?",
+      "faq.a4": "Напишіть, що є і що хочете змінити. Спершу подивлюся і запропоную варіант з ціною в доларах.",
       "combo.eyebrow": "Найвигідніше",
       "combo.title": "Сайт + бот для заявок",
       "combo.text": "Сайт приводить клієнтів, бот сам приймає заявки й пише вам у Telegram.",
