@@ -331,6 +331,16 @@
   .card.client { display: flex; flex-direction: column; }
   .card.client h3 { font-family: var(--font-display); font-size: 22px; font-weight: 300; letter-spacing: 0.04em; margin: 14px 0 12px; }
   .card.client p { color: var(--text-2); font-weight: 300; }
+  /* скриншоты клиентов фоном карточки, затемнены градиентом, чтобы текст читался */
+  .card.client.has-shot {
+    background:
+      linear-gradient(180deg, rgba(8, 6, 20, 0.72) 0%, rgba(8, 6, 20, 0.88) 50%, rgba(8, 6, 20, 0.95) 100%),
+      var(--shot) center top / cover no-repeat,
+      var(--glass);
+    text-shadow: 0 1px 14px rgba(0, 0, 0, 0.75);
+  }
+  .card.client.has-shot p { color: #d6d0e8; }
+  .card.client.has-shot .tag { background: rgba(8, 6, 20, 0.6); }
   .client-link { margin-top: auto; padding-top: 22px; font-family: var(--font-display); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--violet-bright); }
   .client-link:hover { color: #fff; }
   @media (max-width: 900px) { .work.clients { grid-template-columns: 1fr; } }
@@ -756,7 +766,7 @@
       </div>
 
       <div class="work clients">
-        <article class="card client reveal">
+        <article class="card client has-shot reveal" style="--shot: url('assets/client-smart.jpg')">
           <div class="wide" data-i18n="cl1.eyebrow">SaaS · ИИ-бизнес-планирование</div>
           <h3>SMART Business Planner</h3>
           <p data-i18n="cl1.text">ИИ-планировщик бизнеса. Виртуальный совет директоров (CEO, CFO, CTO, CRO) даёт вердикты по идеям, а отделы анализируют рынок, финансы, риски и дорожную карту. Первые три анализа бесплатно, без карты.</p>
@@ -764,7 +774,7 @@
           <a class="client-link" href="https://imfinity-os.vercel.app" target="_blank" rel="noopener">imfinity-os.vercel.app ↗</a>
         </article>
 
-        <article class="card client reveal">
+        <article class="card client has-shot reveal" style="--shot: url('assets/client-blogfinity.jpg')">
           <div class="wide" data-i18n="cl2.eyebrow">Маркетплейс · инфлюенсеры</div>
           <h3>BLOGfinity</h3>
           <p data-i18n="cl2.text">Площадка, которая соединяет проверенные бренды с проверенными креаторами в TikTok и Instagram. ИИ отсеивает накрутки и ботов, цена кампании фиксированная, без процентной комиссии. Есть кошелёк и выплаты, аналитика, семь языков. YouTube в разработке.</p>
@@ -772,7 +782,7 @@
           <a class="client-link" href="https://blogfinity.de" target="_blank" rel="noopener">blogfinity.de ↗</a>
         </article>
 
-        <article class="card client reveal">
+        <article class="card client has-shot reveal" style="--shot: url('assets/client-imfinity.jpg')">
           <div class="wide" data-i18n="cl3.eyebrow">Сайт · недвижимость</div>
           <h3>IMFINITY Immobilien</h3>
           <p data-i18n="cl3.text">Сайт немецкой компании по недвижимости в Баден-Вюртемберге. Бесплатная онлайн-оценка объекта, продажа, аренда, покупка и инвестиции, а также услуги архитектуры и дизайна. Светлый дизайн с архитектурным визуалом на первом экране.</p>
@@ -780,7 +790,7 @@
           <a class="client-link" href="https://imfinity.de" target="_blank" rel="noopener">imfinity.de ↗</a>
         </article>
 
-        <article class="card client reveal">
+        <article class="card client has-shot reveal" style="--shot: url('assets/client-callfinity.jpg')">
           <div class="wide" data-i18n="cl4.eyebrow">ИИ-телефония · голосовые ассистенты</div>
           <h3>Callfinity AI</h3>
           <p data-i18n="cl4.text">ИИ-ассистенты для звонков бизнеса, входящих и исходящих. Они отвечают и переадресуют звонки, собирают заявки, записывают на приём, проводят опросы и напоминания. Интеграции с CRM и API, готовые решения для страхования, медицины, ремесла и недвижимости.</p>
