@@ -322,6 +322,11 @@
   .price { margin-top: auto; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-top: 18px; border-top: 1px solid rgba(196, 181, 253, 0.08); }
   .price b { font-family: var(--font-display); font-size: 26px; font-weight: 400; white-space: nowrap; }
   .price span { font-family: var(--font-display); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-3); }
+  .price .cost { display: flex; flex-direction: column; gap: 4px; }
+  .price .side { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; text-align: right; }
+  .usd { font-style: normal; font-family: var(--font-display); font-size: 12px; font-weight: 400; letter-spacing: 0.06em; color: var(--text-3); }
+  .combo .amount .usd { display: block; font-size: 13px; margin-top: 8px; }
+  .combo .amount .usd s { font-size: 12px; margin-left: 6px; }
 
   .subhead { margin: 56px 0 22px; }
   .subhead p { color: var(--text-2); font-size: 15px; font-weight: 300; margin-top: 10px; }
@@ -601,7 +606,7 @@
             <li data-i18n="s1.l2">Русская и английская версии</li>
             <li data-i18n="s1.l3">Форма заявок и хостинг</li>
           </ul>
-          <div class="price"><b data-i18n="s1.price">от €300</b><span data-i18n="s1.time">3–7 дней</span></div>
+          <div class="price"><div class="cost"><b data-i18n="s1.price">от €300</b><i class="usd">≈ $340</i></div><div class="side"><span data-i18n="s1.time">3–7 дней</span></div></div>
         </article>
 
         <article class="card service reveal">
@@ -613,7 +618,7 @@
             <li data-i18n="s2.l2">Уведомления и запись в календарь</li>
             <li data-i18n="s2.l3">Ответы на частые вопросы с ИИ</li>
           </ul>
-          <div class="price"><b data-i18n="s2.price">от €500</b><span data-i18n="s2.time">1–2 недели</span></div>
+          <div class="price"><div class="cost"><b data-i18n="s2.price">от €500</b><i class="usd">≈ $560</i></div><div class="side"><span data-i18n="s2.time">1–2 недели</span></div></div>
         </article>
 
         <article class="card service reveal">
@@ -625,7 +630,7 @@
             <li data-i18n="s3.l2">Обновляется автоматически</li>
             <li data-i18n="s3.l3">Понятные графики без Excel</li>
           </ul>
-          <div class="price"><b data-i18n="s3.price">от €400</b><span data-i18n="s3.time">1–2 недели</span></div>
+          <div class="price"><div class="cost"><b data-i18n="s3.price">от €400</b><i class="usd">≈ $450</i></div><div class="side"><span data-i18n="s3.time">1–2 недели</span></div></div>
         </article>
 
         <article class="card service reveal">
@@ -637,7 +642,7 @@
             <li data-i18n="s4.l2">Озвучка и субтитры</li>
             <li data-i18n="s4.l3">Ваш бренд в кадре</li>
           </ul>
-          <div class="price"><b data-i18n="s4.price">от €100</b><span data-i18n="s4.time">€400 за 5 роликов</span></div>
+          <div class="price"><div class="cost"><b data-i18n="s4.price">от €100</b><i class="usd">≈ $110</i></div><div class="side"><span data-i18n="s4.time">€400 за 5 роликов</span><i class="usd">≈ $450</i></div></div>
         </article>
       </div>
 
@@ -647,7 +652,7 @@
           <h3 data-i18n="combo.title">Сайт + бот для заявок</h3>
           <p data-i18n="combo.text">Сайт приводит клиентов, бот сам принимает заявки и пишет вам в Telegram.</p>
         </div>
-        <div class="amount"><span class="crystal">€700</span><s>€800</s></div>
+        <div class="amount"><span class="crystal">€700</span><s>€800</s><small class="usd">≈ $780 <s>$900</s></small></div>
       </div>
 
       <div class="subhead reveal">
@@ -665,7 +670,7 @@
             <li data-i18n="s5.l2">Хостинг и обновления</li>
             <li data-i18n="s5.l3">Небольшие доработки сайта или бота</li>
           </ul>
-          <div class="price"><b data-i18n="s5.price">от €50/мес</b><span data-i18n="s5.time">подписка</span></div>
+          <div class="price"><div class="cost"><b data-i18n="s5.price">от €50/мес</b><i class="usd">≈ $60</i></div><div class="side"><span data-i18n="s5.time">подписка</span></div></div>
         </article>
 
         <article class="card service reveal">
@@ -677,7 +682,7 @@
             <li data-i18n="s6.l2">Reels, TikTok и Shorts</li>
             <li data-i18n="s6.l3">В стиле вашего бренда</li>
           </ul>
-          <div class="price"><b data-i18n="s6.price">от €400/мес</b><span data-i18n="s6.time">подписка</span></div>
+          <div class="price"><div class="cost"><b data-i18n="s6.price">от €400/мес</b><i class="usd">≈ $450</i></div><div class="side"><span data-i18n="s6.time">подписка</span></div></div>
         </article>
 
         <article class="card service reveal">
@@ -689,7 +694,7 @@
             <li data-i18n="s7.l2">Отвечает по прайсу и FAQ</li>
             <li data-i18n="s7.l3">Записывает клиентов</li>
           </ul>
-          <div class="price"><b data-i18n="s7.price">от €600</b><span data-i18n="s7.time">+ €50/мес</span></div>
+          <div class="price"><div class="cost"><b data-i18n="s7.price">от €600</b><i class="usd">≈ $670</i></div><div class="side"><span data-i18n="s7.time">+ €50/мес</span><i class="usd">≈ $60</i></div></div>
         </article>
       </div>
     </div>
