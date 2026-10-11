@@ -1,8 +1,10 @@
 # Animorphi — портфолио
 
-Статичный сайт-портфолио (RU/EN), публикуется через GitHub Pages: https://animorphios.github.io/animorphi.os.github.io/
+Статичный сайт-портфолио (EN/UK/RU), публикуется через GitHub Pages: https://animorphios.github.io/animorphi.os.github.io/
 
 Контакты задаются в объекте `CONTACTS` в начале скрипта в `index.html`.
+
+Языки: `I18N` в `index.html`, словари `en` и `uk` (русский берётся из разметки). Английский открывается по умолчанию; выбор посетителя сохраняется в `localStorage`, а `?lang=uk` открывает украинскую версию. Новый текст добавляйте сразу во все три языка, иначе кнопка покажет старый текст.
 
 Анимации: GSAP 3.15 (ScrollTrigger, SplitText) и Lenis 1.3.26 лежат локально в `assets/vendor/`, эффекты в духе React Bits (Aurora, Shiny Text, Spotlight Card, Magnet) написаны на чистом CSS/JS. При «уменьшить движение» в системе анимации отключаются.
 
