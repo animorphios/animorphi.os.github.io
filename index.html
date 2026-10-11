@@ -314,15 +314,18 @@
     box-shadow: 0 0 22px rgba(124, 77, 255, 0.2);
   }
   .service .icon svg { width: 22px; height: 22px; stroke: var(--silver); }
-  .service h3 { font-family: var(--font-display); font-size: 22px; font-weight: 400; letter-spacing: 0.02em; margin-bottom: 8px; }
+  .service h3 { font-family: var(--font-display); font-size: 22px; font-weight: 400; letter-spacing: 0.02em; line-height: 1.3; margin-bottom: 8px; }
   .service p { color: var(--text-2); font-size: 15px; font-weight: 300; }
   .service ul { list-style: none; margin: 16px 0 22px; display: grid; gap: 7px; font-size: 14px; color: var(--text-2); font-weight: 300; }
   .service li { display: flex; gap: 10px; align-items: baseline; }
   .service li::before { content: ""; flex: none; width: 5px; height: 5px; transform: rotate(45deg) translateY(-2px); background: var(--violet-bright); box-shadow: 0 0 8px var(--violet); }
   .price { margin-top: auto; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-top: 18px; border-top: 1px solid rgba(196, 181, 253, 0.08); }
-  .price b { font-family: var(--font-display); font-size: 26px; font-weight: 400; }
+  .price b { font-family: var(--font-display); font-size: 26px; font-weight: 400; white-space: nowrap; }
   .price span { font-family: var(--font-display); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-3); }
 
+  .subhead { margin: 56px 0 22px; }
+  .subhead p { color: var(--text-2); font-size: 15px; font-weight: 300; margin-top: 10px; }
+  .services.monthly { grid-template-columns: repeat(3, 1fr); }
   .combo {
     margin-top: 16px;
     display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
@@ -487,6 +490,7 @@
   }
 
   @media (max-width: 900px) {
+    .services.monthly { grid-template-columns: 1fr; }
     .intro-grid { grid-template-columns: 1fr; }
     .emblem { max-width: 300px; }
     .card.case { grid-template-columns: 1fr; }
@@ -501,7 +505,7 @@
     .eyes { display: none; }
     .intro { padding-top: 24px; }
     .emblem { display: none; }
-    .services { grid-template-columns: 1fr; }
+    .services, .services.monthly { grid-template-columns: 1fr; }
     .stats { grid-template-columns: 1fr; margin-top: 44px; }
     section { padding: 60px 0; }
     .card { padding: 24px; }
@@ -584,7 +588,7 @@
       <div class="section-head reveal">
         <div class="wide" data-i18n="services.eyebrow">Услуги</div>
         <h2 data-split="chars" data-i18n="services.title">Что я делаю для бизнеса</h2>
-        <p data-i18n="services.lead">Четыре направления, которые закрывают большую часть задач малого бизнеса онлайн.</p>
+        <p data-i18n="services.lead">Разовые проекты и ежемесячные услуги, которые закрывают большую часть задач малого бизнеса онлайн.</p>
       </div>
 
       <div class="services">
@@ -644,6 +648,49 @@
           <p data-i18n="combo.text">Сайт приводит клиентов, бот сам принимает заявки и пишет вам в Telegram.</p>
         </div>
         <div class="amount"><span class="crystal">€700</span><s>€800</s></div>
+      </div>
+
+      <div class="subhead reveal">
+        <div class="wide" data-i18n="monthly.eyebrow">Ежемесячно</div>
+        <p data-i18n="monthly.lead">Чтобы после запуска всё работало и приносило клиентов.</p>
+      </div>
+
+      <div class="services monthly">
+        <article class="card service reveal">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.6-3 8.4-7 10-4-1.6-7-5.4-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3 data-i18n="s5.title">Абонемент на поддержку</h3>
+          <p data-i18n="s5.text">Сайт или бот всегда в рабочем состоянии, а изменения делаю я.</p>
+          <ul>
+            <li data-i18n="s5.l1">Правки текстов, цен и фото</li>
+            <li data-i18n="s5.l2">Хостинг и обновления</li>
+            <li data-i18n="s5.l3">Небольшие доработки сайта или бота</li>
+          </ul>
+          <div class="price"><b data-i18n="s5.price">от €50/мес</b><span data-i18n="s5.time">подписка</span></div>
+        </article>
+
+        <article class="card service reveal">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M3 10h18M8 3v4M16 3v4"/><path d="M10.5 13v5l4-2.5z"/></svg></div>
+          <h3 data-i18n="s6.title">AI-контент по подписке</h3>
+          <p data-i18n="s6.text">Свежие ролики для соцсетей каждый месяц, без съёмок.</p>
+          <ul>
+            <li data-i18n="s6.l1">8–12 роликов в месяц</li>
+            <li data-i18n="s6.l2">Reels, TikTok и Shorts</li>
+            <li data-i18n="s6.l3">В стиле вашего бренда</li>
+          </ul>
+          <div class="price"><b data-i18n="s6.price">от €400/мес</b><span data-i18n="s6.time">подписка</span></div>
+        </article>
+
+        <article class="card service reveal">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M12 8.2l.9 1.9 1.9.9-1.9.9-.9 1.9-.9-1.9-1.9-.9 1.9-.9z"/></svg></div>
+          <h3 data-i18n="s7.title">ИИ-ассистент на базе знаний</h3>
+          <p data-i18n="s7.text">Бот знает ваш прайс и ответы на частые вопросы и сам записывает клиентов.</p>
+          <ul>
+            <li data-i18n="s7.l1">В Telegram или на сайте</li>
+            <li data-i18n="s7.l2">Отвечает по прайсу и FAQ</li>
+            <li data-i18n="s7.l3">Записывает клиентов</li>
+          </ul>
+          <div class="price"><b data-i18n="s7.price">от €600</b><span data-i18n="s7.time">+ €50/мес</span></div>
+        </article>
       </div>
     </div>
   </section>
@@ -807,7 +854,7 @@
       "hero.cta1": "Discuss a project", "hero.cta2": "See my work",
       "stats.agents": "AI agents in my own product", "stats.daysVal": "3–7 days", "stats.days": "to launch a landing page", "stats.langs": "languages I work in",
       "services.eyebrow": "Services", "services.title": "What I build for businesses",
-      "services.lead": "Four areas that cover most of what a small business needs online.",
+      "services.lead": "One-off projects and monthly services that cover most of what a small business needs online.",
       "s1.title": "Website or landing page", "s1.text": "A modern site that sells and looks great on a phone.",
       "s1.l1": "Design that fits your brand", "s1.l2": "Russian and English versions", "s1.l3": "Lead form and hosting",
       "s1.price": "from €300", "s1.time": "3–7 days",
@@ -822,6 +869,16 @@
       "s4.price": "from €100", "s4.time": "€400 for 5 videos",
       "combo.eyebrow": "Best value", "combo.title": "Website + lead bot",
       "combo.text": "The site brings clients, the bot takes their requests and messages you on Telegram.",
+      "monthly.eyebrow": "Monthly", "monthly.lead": "To keep everything running and bringing in clients after launch.",
+      "s5.title": "Support plan", "s5.text": "Your site or bot stays in working order, and I make the changes.",
+      "s5.l1": "Text, price and photo edits", "s5.l2": "Hosting and updates", "s5.l3": "Small improvements to the site or bot",
+      "s5.price": "from €50/mo", "s5.time": "subscription",
+      "s6.title": "AI content subscription", "s6.text": "Fresh social media videos every month, no filming.",
+      "s6.l1": "8–12 videos a month", "s6.l2": "Reels, TikTok and Shorts", "s6.l3": "In your brand's style",
+      "s6.price": "from €400/mo", "s6.time": "subscription",
+      "s7.title": "AI knowledge-base assistant", "s7.text": "A bot that knows your prices and FAQ and books clients by itself.",
+      "s7.l1": "In Telegram or on your site", "s7.l2": "Answers from your price list and FAQ", "s7.l3": "Books clients",
+      "s7.price": "from €600", "s7.time": "+ €50/mo",
       "work.eyebrow": "Work", "work.title": "My own products and projects",
       "work.lead": "Complex systems I built from scratch and use myself.",
       "c1.eyebrow": "AI video · automation",
