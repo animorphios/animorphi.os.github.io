@@ -405,6 +405,21 @@
   .contact p { color: var(--text-2); margin: 16px auto 34px; max-width: 520px; font-weight: 300; }
   .contact .cta { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
 
+  .socials-label { margin-top: 40px; color: var(--text-3); }
+  .socials { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
+  .socials a {
+    width: 46px; height: 46px;
+    border-radius: 50%;
+    display: grid; place-items: center;
+    border: 1px solid var(--line);
+    background: rgba(3, 2, 5, 0.55);
+    color: var(--text-2);
+    backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+    transition: color 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+  }
+  .socials a:hover { color: #fff; border-color: var(--violet-bright); box-shadow: 0 0 22px rgba(124, 77, 255, 0.45); transform: translateY(-2px); }
+  .socials svg { width: 19px; height: 19px; }
+
   footer { padding: 48px 0 60px; color: var(--text-3); font-size: 13px; }
   footer .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
   footer .brandline { font-family: var(--font-display); letter-spacing: 0.42em; font-size: 11px; font-weight: 300; text-transform: uppercase; }
@@ -735,6 +750,21 @@
               Email
             </a>
           </div>
+          <div class="wide socials-label" data-i18n="contact.socials">Animorphi в соцсетях</div>
+          <div class="socials">
+            <a href="https://t.me/animorphi_AI" target="_blank" rel="noopener" aria-label="Telegram-канал Animorphi">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.6 18.7 19.8c-.2 1.1-.9 1.4-1.8.9l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9.1-8.2c.4-.4-.1-.6-.6-.2L6.2 13.6l-4.8-1.5c-1-.3-1.1-1 .2-1.5L20.6 3.3c.9-.3 1.6.2 1.3 1.3z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/animorphi_ai" target="_blank" rel="noopener" aria-label="Instagram Animorphi">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@animorphi" target="_blank" rel="noopener" aria-label="TikTok Animorphi">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.8a4.3 4.3 0 0 1-1-2.8h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.7a5.7 5.7 0 1 0 4.9 5.7V9.1a7.3 7.3 0 0 0 4.3 1.4V7.4a4.3 4.3 0 0 1-3.3-1.6z"/></svg>
+            </a>
+            <a href="https://youtube.com/@animorphi_labs" target="_blank" rel="noopener" aria-label="YouTube Animorphi">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 8.2a3 3 0 0 0-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 0 0 2 8.2 31 31 0 0 0 1.6 12 31 31 0 0 0 2 15.8a3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-3.8 31 31 0 0 0-.4-3.8zM10 15.1V8.9l5.2 3.1z"/></svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -756,8 +786,8 @@
 <script>
   // Контакты: впишите свои значения, кнопки подхватят их сами.
   const CONTACTS = {
-    telegram: "",   // ник без @, например "animorphi"
-    whatsapp: "",   // номер в международном формате без +, например "4915112345678"
+    telegram: "animorphi",        // ник без @ (с лендинга animorphi.pages.dev/links)
+    whatsapp: "4915152940103",    // номер в международном формате без +
     email: ""       // адрес почты
   };
 
@@ -806,6 +836,7 @@
       "tools.eyebrow": "Tools",
       "contact.eyebrow": "Contact", "contact.title": "Have a task? <span class=\"crystal\">Let’s talk</span>",
       "contact.lead": "Describe what you need in a couple of sentences. I reply within a day with a solution and a price.",
+      "contact.socials": "Animorphi on social media",
       "meta.title": "Animorphi — websites, automation and AI video",
       "meta.desc": "Animorphi AI Content Labs: websites, business automation, dashboards and AI video. Ideas transform reality."
     }
