@@ -264,7 +264,7 @@
   @keyframes glow { 0%, 100% { opacity: 0.6; transform: scale(1); } 50% { opacity: 1; transform: scale(1.08); } }
   @keyframes spin { to { transform: rotate(360deg); } }
 
-  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 64px; }
+  .stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 64px; }
   .stat { border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 22px; background: var(--glass); }
   .stat b { display: block; font-family: var(--font-display); font-size: 26px; font-weight: 300; letter-spacing: 0.04em; }
   .stat span { color: var(--text-2); font-size: 14px; font-weight: 300; }
@@ -633,7 +633,7 @@
         <div class="reveal">
           <div class="wide shiny">AI Content Labs</div>
           <h1 data-i18n-html="hero.title" data-split="words">Сайты, автоматизация и <strong class="crystal">AI-видео</strong> для бизнеса</h1>
-          <p class="lead" data-i18n="hero.lead">Работаю вместе с ИИ, поэтому быстрее и дешевле студии. От лендинга за несколько дней до Telegram-бота, который сам принимает заявки.</p>
+          <p class="lead" data-i18n="hero.lead">Работаю вместе с ИИ, поэтому быстрее и дешевле студии. От лендинга до Telegram-бота, который сам принимает заявки.</p>
           <div class="cta">
             <a class="btn btn-primary" href="#contact" data-i18n="hero.cta1">Обсудить проект</a>
             <a class="btn btn-ghost" href="#work" data-i18n="hero.cta2">Смотреть работы</a>
@@ -646,7 +646,6 @@
       </div>
       <div class="stats">
         <div class="stat reveal"><b class="crystal" data-count="13">13</b><span data-i18n="stats.agents">ИИ-агентов в моём собственном продукте</span></div>
-        <div class="stat reveal"><b class="crystal" data-i18n="stats.daysVal">3–7 дней</b><span data-i18n="stats.days">на запуск лендинга</span></div>
         <div class="stat reveal"><b class="crystal">RU · UA · EN</b><span data-i18n="stats.langs">языки общения и сайтов</span></div>
       </div>
     </div>
@@ -672,7 +671,7 @@
             <li data-i18n="s1.l2">Русская и английская версии</li>
             <li data-i18n="s1.l3">Форма заявок и хостинг</li>
           </ul>
-          <div class="price"><div class="cost"><b data-i18n="s1.price">от $340</b></div><div class="side"><span data-i18n="s1.time">3–7 дней</span></div></div>
+          <div class="price"><div class="cost"><b data-i18n="s1.price">от $340</b></div></div>
         </article>
 
         <article class="card service reveal">
@@ -685,7 +684,7 @@
             <li data-i18n="s2.l2">Уведомления и запись в календарь</li>
             <li data-i18n="s2.l3">Ответы на частые вопросы с ИИ</li>
           </ul>
-          <div class="price"><div class="cost"><b data-i18n="s2.price">от $560</b></div><div class="side"><span data-i18n="s2.time">1–2 недели</span></div></div>
+          <div class="price"><div class="cost"><b data-i18n="s2.price">от $560</b></div></div>
         </article>
 
         <article class="card service reveal">
@@ -698,7 +697,7 @@
             <li data-i18n="s3.l2">Обновляется автоматически</li>
             <li data-i18n="s3.l3">Понятные графики без Excel</li>
           </ul>
-          <div class="price"><div class="cost"><b data-i18n="s3.price">от $450</b></div><div class="side"><span data-i18n="s3.time">1–2 недели</span></div></div>
+          <div class="price"><div class="cost"><b data-i18n="s3.price">от $450</b></div></div>
         </article>
 
         <article class="card service reveal">
@@ -789,13 +788,11 @@
         <h3 data-i18n="terms.title">Условия работы</h3>
         <ul class="terms-list">
           <li data-i18n="terms.l1">Предоплата 50% до старта, остаток 50% после сдачи.</li>
-          <li data-i18n="terms.l2">Комбо «сайт + лид-бот»: запуск за 7 дней. Сроки остальных услуг указаны у каждой услуги и в КП.</li>
-          <li data-i18n="terms.l3">Отсчёт сроков начинается после предоплаты и получения ваших материалов.</li>
+          <li data-i18n="terms.l2">Комбо «сайт + лид-бот» — одна цена за сайт и бота вместе.</li>
           <li data-i18n="terms.l4">Два раунда правок входят в стоимость.</li>
           <li data-i18n="terms.l5">30 дней после сдачи я бесплатно исправляю ошибки.</li>
           <li data-i18n="terms.l6">Дальше по желанию поддержка от $60 в месяц.</li>
           <li data-i18n="terms.l7">−30% на первый разовый заказ для всех клиентов. На ежемесячные подписки не распространяется.</li>
-          <li data-i18n="terms.l8">Все цены в долларах США.</li>
         </ul>
       </div>
     </div>
@@ -959,7 +956,7 @@
       </div>
       <div class="steps">
         <div class="card step reveal"><div class="num crystal">01</div><h3 data-i18n="st1.t">Короткий бриф</h3><p data-i18n="st1.p">Пишете в Telegram или WhatsApp, за 15 минут разбираем задачу.</p></div>
-        <div class="card step reveal"><div class="num crystal">02</div><h3 data-i18n="st2.t">Цена и сроки</h3><p data-i18n="st2.p">Присылаю фиксированную цену и план. Предоплата 50%.</p></div>
+        <div class="card step reveal"><div class="num crystal">02</div><h3 data-i18n="st2.t">Цена и план</h3><p data-i18n="st2.p">Присылаю фиксированную цену и план. Предоплата 50%.</p></div>
         <div class="card step reveal"><div class="num crystal">03</div><h3 data-i18n="st3.t">Первый вариант</h3><p data-i18n="st3.p">Показываю рабочую версию, вносим правки вместе.</p></div>
         <div class="card step reveal"><div class="num crystal">04</div><h3 data-i18n="st4.t">Запуск</h3><p data-i18n="st4.p">Запускаю, передаю доступы и объясняю, как всем пользоваться.</p></div>
       </div>
@@ -1070,20 +1067,20 @@
       "nav.services": "Services", "nav.work": "Work", "nav.process": "Process", "nav.contact": "Contact",
       "cue": "scroll",
       "hero.title": "Websites, automation and <strong class=\"crystal\">AI video</strong> for business",
-      "hero.lead": "I build together with AI, so it is faster and cheaper than a studio. From a landing page in a few days to a Telegram bot that takes orders for you.",
+      "hero.lead": "I build together with AI, so it is faster and cheaper than a studio. From a landing page to a Telegram bot that takes orders for you.",
       "hero.cta1": "Discuss a project", "hero.cta2": "See my work",
-      "stats.agents": "AI agents in my own product", "stats.daysVal": "3–7 days", "stats.days": "to launch a landing page", "stats.langs": "languages I work in",
+      "stats.agents": "AI agents in my own product", "stats.langs": "languages I work in",
       "services.eyebrow": "Services", "services.title": "What I build for businesses",
       "services.lead": "One-off projects and monthly services that cover most of what a small business needs online.",
       "s1.title": "Website", "s1.text": "A modern site that sells and looks great on a phone.",
       "s1.l1": "Design that fits your brand", "s1.l2": "Russian and English versions", "s1.l3": "Lead form and hosting",
-      "s1.price": "from $340", "s1.time": "3–7 days",
+      "s1.price": "from $340",
       "s2.title": "Business automation", "s2.text": "A Telegram bot or AI assistant that answers clients and collects orders for you.",
       "s2.l1": "Orders straight into a sheet or CRM", "s2.l2": "Notifications and calendar booking", "s2.l3": "AI answers to common questions",
-      "s2.price": "from $560", "s2.time": "1–2 weeks",
+      "s2.price": "from $560",
       "s3.title": "Dashboard", "s3.text": "All your business numbers on one screen, available on your phone.",
       "s3.l1": "Sales, leads, social media", "s3.l2": "Updates automatically", "s3.l3": "Clear charts instead of Excel",
-      "s3.price": "from $450", "s3.time": "1–2 weeks",
+      "s3.price": "from $450",
       "s4.title": "AI video", "s4.text": "9:16 ads for Reels, TikTok and Shorts in a cinematic 3D style.",
       "s4.l1": "Script, frames and animation", "s4.l2": "Voice-over and subtitles", "s4.l3": "Your brand in the shot",
       "s4.price": "from $110", "s4.time": "$450 for 5 videos",
@@ -1092,13 +1089,11 @@
       "s8.price": "from $220",
       "terms.eyebrow": "Terms", "terms.title": "Working terms",
       "terms.l1": "50% prepayment before the start, the remaining 50% after delivery.",
-      "terms.l2": "Combo “website + lead bot”: launch in 7 days. Timing for other services is listed with each service and in the proposal.",
-      "terms.l3": "The schedule starts after the prepayment and receipt of your materials.",
+      "terms.l2": "Combo “website + lead bot”: one price for the site and the bot together.",
       "terms.l4": "Two rounds of revisions are included.",
       "terms.l5": "For 30 days after delivery I fix bugs free of charge.",
       "terms.l6": "After that, optional support from $60 a month.",
       "terms.l7": "30% off your first one-time order for every client. Monthly subscriptions are not included.",
-      "terms.l8": "All prices are in US dollars.",
       "faq.eyebrow": "FAQ", "faq.title": "Frequently asked questions",
       "faq.q1": "What do you need from me to start?",
       "faq.a1": "A short description of the task, your materials (text, logo, photos) and access to the services we will use. We agree on the rest in our chat.",
@@ -1152,7 +1147,7 @@
       "chip.1": "AI videos", "chip.2": "Dashboards", "chip.3": "Websites", "chip.4": "Automation", "chip.5": "Telegram bots",
       "process.eyebrow": "Process", "process.title": "Four steps from idea to launch",
       "st1.t": "Quick brief", "st1.p": "Message me on Telegram or WhatsApp, and we sort out the task in 15 minutes.",
-      "st2.t": "Price and timeline", "st2.p": "I send a fixed price and a plan. 50% upfront.",
+      "st2.t": "Price and plan", "st2.p": "I send a fixed price and a plan. 50% upfront.",
       "st3.t": "First version", "st3.p": "I show a working version and we refine it together.",
       "st4.t": "Launch", "st4.p": "I launch it, hand over access and show you how everything works.",
       "tools.eyebrow": "Tools",
@@ -1169,12 +1164,10 @@
       "nav.contact": "Контакти",
       "cue": "гортайте",
       "hero.title": "Сайти, автоматизація та <strong class=\"crystal\">ШІ-відео</strong> для бізнесу",
-      "hero.lead": "Працюю разом зі ШІ, тому швидше й дешевше за студію. Від лендінгу за кілька днів до Telegram-бота, який сам приймає заявки.",
+      "hero.lead": "Працюю разом зі ШІ, тому швидше й дешевше за студію. Від лендінгу до Telegram-бота, який сам приймає заявки.",
       "hero.cta1": "Обговорити проєкт",
       "hero.cta2": "Дивитися роботи",
       "stats.agents": "ШІ-агентів у моєму власному продукті",
-      "stats.daysVal": "3–7 днів",
-      "stats.days": "на запуск лендінгу",
       "stats.langs": "мови спілкування та сайтів",
       "services.eyebrow": "Послуги",
       "services.title": "Що я роблю для бізнесу",
@@ -1185,21 +1178,18 @@
       "s1.l2": "Українська та англійська версії",
       "s1.l3": "Форма заявок і хостинг",
       "s1.price": "від $340",
-      "s1.time": "3–7 днів",
       "s2.title": "Автоматизація бізнесу",
       "s2.text": "Telegram-бот або ШІ-асистент, який відповідає клієнтам і збирає заявки за вас.",
       "s2.l1": "Заявки в таблицю або CRM",
       "s2.l2": "Сповіщення та запис у календар",
       "s2.l3": "Відповіді на часті питання за допомогою ШІ",
       "s2.price": "від $560",
-      "s2.time": "1–2 тижні",
       "s3.title": "Дашборд",
       "s3.text": "Усі цифри бізнесу на одному екрані, з доступом із телефона.",
       "s3.l1": "Продажі, заявки, соцмережі",
       "s3.l2": "Оновлюється автоматично",
       "s3.l3": "Зрозумілі графіки без Excel",
       "s3.price": "від $450",
-      "s3.time": "1–2 тижні",
       "s4.title": "ШІ-відео",
       "s4.text": "Рекламні ролики 9:16 для Reels, TikTok і Shorts у кінематографічному 3D-стилі.",
       "s4.l1": "Сценарій, кадри та анімація",
@@ -1212,13 +1202,11 @@
       "s8.price": "від $220",
       "terms.eyebrow": "Умови", "terms.title": "Умови роботи",
       "terms.l1": "Передоплата 50% до старту, решта 50% після здачі.",
-      "terms.l2": "Комбо «сайт + лід-бот»: запуск за 7 днів. Терміни інших послуг вказані в кожній послузі та в КП.",
-      "terms.l3": "Відлік строків починається після передоплати та отримання ваших матеріалів.",
+      "terms.l2": "Комбо «сайт + лід-бот» — одна ціна за сайт і бота разом.",
       "terms.l4": "Два раунди правок входять у вартість.",
       "terms.l5": "30 днів після здачі я безкоштовно виправляю помилки.",
       "terms.l6": "Далі за бажанням підтримка від $60 на місяць.",
       "terms.l7": "−30% на перше разове замовлення для всіх клієнтів. На щомісячні підписки не поширюється.",
-      "terms.l8": "Усі ціни в доларах США.",
       "faq.eyebrow": "FAQ", "faq.title": "Поширені питання",
       "faq.q1": "Що потрібно від мене, щоб почати?",
       "faq.a1": "Короткий опис завдання, ваші матеріали (тексти, логотип, фото) і доступи до сервісів, з якими будемо працювати. Решту узгодимо в листуванні.",
@@ -1304,7 +1292,7 @@
       "process.title": "Чотири кроки від ідеї до запуску",
       "st1.t": "Короткий бриф",
       "st1.p": "Пишете в Telegram або WhatsApp, за 15 хвилин розбираємо завдання.",
-      "st2.t": "Ціна та строки",
+      "st2.t": "Ціна та план",
       "st2.p": "Надсилаю фіксовану ціну й план. Передоплата 50%.",
       "st3.t": "Перша версія",
       "st3.p": "Показую робочу версію, вносимо правки разом.",
