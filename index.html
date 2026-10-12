@@ -378,6 +378,16 @@
   .reel p { color: var(--text-2); font-weight: 300; font-size: 14px; }
   .reel .client-link { margin: 0; padding: 0; white-space: nowrap; }
   @media (max-width: 900px) { .card.reel { grid-template-columns: 1fr; gap: 10px; } }
+  .soc-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .soc-big { display: flex; flex-direction: column; justify-content: center; gap: 6px; padding: 26px 28px; }
+  .soc-big b { font-family: var(--font-display); font-size: 42px; font-weight: 300; letter-spacing: 0.02em; line-height: 1.1; background: linear-gradient(120deg, #ffffff 0%, var(--violet-bright) 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .soc-big span { font-family: var(--font-display); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); }
+  .soc-platforms { grid-column: 1 / -1; display: grid; gap: 14px; padding: 26px 28px; }
+  .soc-platforms .soc-label { font-family: var(--font-display); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); }
+  .soc-row { display: grid; grid-template-columns: 150px 1fr 90px; gap: 16px; align-items: center; font-size: 14px; font-weight: 300; color: var(--text-2); }
+  .soc-row i { display: block; height: 8px; border-radius: 8px; width: var(--w); min-width: 3px; background: linear-gradient(90deg, var(--violet-deep), var(--violet-bright)); box-shadow: 0 0 14px rgba(139, 92, 246, 0.45); }
+  .soc-row b { font-weight: 400; color: #fff; text-align: right; white-space: nowrap; }
+  @media (max-width: 900px) { .soc-stats { grid-template-columns: 1fr; } .soc-row { grid-template-columns: 1fr auto; gap: 8px 12px; } .soc-row span { grid-column: 1; grid-row: 1; } .soc-row b { grid-column: 2; grid-row: 1; } .soc-row i { grid-column: 1 / -1; grid-row: 2; } }
   .services.monthly { grid-template-columns: repeat(3, 1fr); }
   .combo {
     margin-top: 16px;
@@ -906,6 +916,30 @@
           <a class="client-link" href="https://www.tiktok.com/@animorphi/video/7616487994110774558" target="_blank" rel="noopener" data-i18n="top.watch">Смотреть в TikTok ↗</a>
         </article>
       </div>
+
+      <div class="subhead reveal">
+        <div class="wide" data-i18n="soc.eyebrow">Статистика в соцсетях</div>
+        <p data-i18n="soc.lead">Все платформы вместе, за всё время. Снимок из аналитики Animorphi от 12 октября 2026.</p>
+      </div>
+
+      <div class="soc-stats">
+        <div class="card soc-big reveal">
+          <b data-i18n="soc.v">65,8 млн</b>
+          <span data-i18n="soc.views">просмотров</span>
+        </div>
+        <div class="card soc-big reveal">
+          <b data-i18n="soc.subs">53 595</b>
+          <span data-i18n="soc.subscribers">подписчиков</span>
+        </div>
+        <div class="card soc-platforms reveal">
+          <div class="soc-label" data-i18n="soc.by">Просмотры по платформам, за всё время</div>
+          <div class="soc-row"><span>TikTok</span><i style="--w: 64.3%"></i><b data-i18n="soc.p1">42,3 млн</b></div>
+          <div class="soc-row"><span>Instagram Reels</span><i style="--w: 31.6%"></i><b data-i18n="soc.p2">20,8 млн</b></div>
+          <div class="soc-row"><span>Facebook</span><i style="--w: 3.2%"></i><b data-i18n="soc.p3">2,1 млн</b></div>
+          <div class="soc-row"><span>Threads</span><i style="--w: 0.8%"></i><b data-i18n="soc.p4">544 тыс.</b></div>
+          <div class="soc-row"><span>YouTube Shorts</span><i style="--w: 0.1%"></i><b data-i18n="soc.p5">29 тыс.</b></div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1105,6 +1139,9 @@
       "top.v1": "16.2M", "top.v2": "8.7M", "top.v3": "5.3M", "top.v4": "4.7M", "top.v5": "4.1M", "top.views": "views",
       "top.d1": "published 19 March 2026", "top.d2": "published 10 March 2026", "top.d3": "published 20 March 2026",
       "top.d4": "published 6 March 2026", "top.d5": "published 12 March 2026", "top.watch": "Watch on TikTok ↗",
+      "soc.eyebrow": "Social media stats", "soc.lead": "All platforms together, all time. Snapshot from Animorphi analytics, 12 October 2026.",
+      "soc.v": "65.8M", "soc.views": "views", "soc.subs": "53,595", "soc.subscribers": "subscribers",
+      "soc.by": "Views by platform, all time", "soc.p1": "42.3M", "soc.p2": "20.8M", "soc.p3": "2.1M", "soc.p4": "544K", "soc.p5": "29K",
       "chip.1": "AI videos", "chip.2": "Dashboards", "chip.3": "Websites", "chip.4": "Automation", "chip.5": "Telegram bots",
       "process.eyebrow": "Process", "process.title": "Four steps from idea to launch",
       "st1.t": "Quick brief", "st1.p": "Message me on Telegram or WhatsApp, and we sort out the task in 15 minutes.",
@@ -1253,6 +1290,9 @@
       "top.d4": "опубліковано 6 березня 2026",
       "top.d5": "опубліковано 12 березня 2026",
       "top.watch": "Дивитися в TikTok ↗",
+      "soc.eyebrow": "Статистика в соцмережах", "soc.lead": "Усі платформи разом, за весь час. Знімок з аналітики Animorphi від 12 жовтня 2026.",
+      "soc.v": "65,8 млн", "soc.views": "переглядів", "soc.subs": "53 595", "soc.subscribers": "підписників",
+      "soc.by": "Перегляди за платформами, за весь час", "soc.p1": "42,3 млн", "soc.p2": "20,8 млн", "soc.p3": "2,1 млн", "soc.p4": "544 тис.", "soc.p5": "29 тис.",
       "process.eyebrow": "Процес",
       "process.title": "Чотири кроки від ідеї до запуску",
       "st1.t": "Короткий бриф",
