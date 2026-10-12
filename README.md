@@ -1,6 +1,6 @@
 # Animorphi — портфолио
 
-Статичный сайт-портфолио (EN/UK/RU), публикуется через GitHub Pages: https://animorphios.github.io/animorphi.os.github.io/
+Статичный сайт-портфолио (EN/UA/RU), публикуется через GitHub Pages: https://animorphios.github.io/animorphi.os.github.io/
 
 Контакты задаются в объекте `CONTACTS` в начале скрипта в `index.html`.
 
