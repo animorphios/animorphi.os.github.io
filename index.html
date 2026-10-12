@@ -357,6 +357,10 @@
   .price span { font-family: var(--font-display); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-3); }
   .price .cost { display: flex; flex-direction: column; gap: 4px; }
   .price .side { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; text-align: right; }
+  .price .row { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 12px; }
+  .price s { font-family: var(--font-display); font-size: 16px; font-weight: 300; color: var(--text-3); text-decoration-thickness: 1px; }
+  .price .side s { font-size: 12px; letter-spacing: 0.12em; margin-right: 4px; }
+  .price .off { font-family: var(--font-display); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--violet-bright); margin-top: 6px; }
 
   .subhead { margin: 56px 0 22px; }
   .subhead p { color: var(--text-2); font-size: 15px; font-weight: 300; margin-top: 10px; }
@@ -676,7 +680,7 @@
             <li data-i18n="s1.l2">Русская и английская версии</li>
             <li data-i18n="s1.l3">Форма заявок и хостинг</li>
           </ul>
-          <div class="price"><div class="cost"><b data-i18n="s1.price">от $350</b></div></div>
+          <div class="price"><div class="cost"><div class="row"><s data-i18n="s1.old">от $350</s><b data-i18n="s1.price">от $245</b></div><span class="off" data-i18n="off.label">−30% за первый заказ</span></div></div>
         </article>
 
         <article class="card service reveal">
@@ -689,7 +693,7 @@
             <li data-i18n="s2.l2">Ответы на частые вопросы с ИИ</li>
             <li data-i18n="s2.l3">Можно подключить CRM и запись</li>
           </ul>
-          <div class="price"><div class="cost"><b data-i18n="s2.price">от $100</b></div><div class="side"><span data-i18n="s2.time">$400 с CRM и записью</span></div></div>
+          <div class="price"><div class="cost"><div class="row"><s data-i18n="s2.old">от $100</s><b data-i18n="s2.price">от $70</b></div><span class="off" data-i18n="off.label">−30% за первый заказ</span></div><div class="side"><span><s>$400</s> <span data-i18n="s2.time">$280 с CRM и записью</span></span></div></div>
         </article>
 
         <article class="card service reveal">
@@ -702,7 +706,7 @@
             <li data-i18n="s3.l2">Обновляется автоматически</li>
             <li data-i18n="s3.l3">Понятные графики без Excel</li>
           </ul>
-          <div class="price"><div class="cost"><b data-i18n="s3.price">от $300</b></div></div>
+          <div class="price"><div class="cost"><div class="row"><s data-i18n="s3.old">от $300</s><b data-i18n="s3.price">от $210</b></div><span class="off" data-i18n="off.label">−30% за первый заказ</span></div></div>
         </article>
 
         <article class="card service reveal">
@@ -715,7 +719,7 @@
             <li data-i18n="s4.l2">Озвучка и субтитры</li>
             <li data-i18n="s4.l3">Ваш бренд в кадре</li>
           </ul>
-          <div class="price"><div class="cost"><b data-i18n="s4.price">от $100</b></div><div class="side"><span data-i18n="s4.time">$450 за 5 роликов</span></div></div>
+          <div class="price"><div class="cost"><div class="row"><s data-i18n="s4.old">от $100</s><b data-i18n="s4.price">от $70</b></div><span class="off" data-i18n="off.label">−30% за первый заказ</span></div><div class="side"><span><s>$450</s> <span data-i18n="s4.time">$315 за 5 роликов</span></span></div></div>
         </article>
 
         <article class="card service reveal">
@@ -728,7 +732,7 @@
             <li data-i18n="s8.l2">Форма заявки или кнопка записи</li>
             <li data-i18n="s8.l3">Адаптив под телефон</li>
           </ul>
-          <div class="price"><div class="cost"><b data-i18n="s8.price">от $150</b></div></div>
+          <div class="price"><div class="cost"><div class="row"><s data-i18n="s8.old">от $150</s><b data-i18n="s8.price">от $105</b></div><span class="off" data-i18n="off.label">−30% за первый заказ</span></div></div>
         </article>
         <article class="card service reveal">
           <div class="svc-anim" aria-hidden="true"><svg viewBox="0 0 300 260" preserveAspectRatio="xMidYMid meet"><g data-t="0"><rect class="f" x="30" y="36" width="150" height="40" rx="14"/><rect class="t" x="46" y="52" width="110" height="6" rx="3"/></g><g data-t="0.8"><circle class="k" cx="50" cy="114" r="4"/><circle class="k" cx="64" cy="114" r="4"/><circle class="k" cx="78" cy="114" r="4"/></g><g data-t="1.4"><rect class="s" x="120" y="96" width="150" height="52" rx="14"/><rect class="t" x="136" y="112" width="118" height="6" rx="3"/><rect class="t" x="136" y="126" width="82" height="6" rx="3"/></g><g data-t="2.0"><rect class="f" x="30" y="170" width="240" height="56" rx="8"/></g><g data-t="2.4"><rect class="k" x="46" y="186" width="100" height="26" rx="6"/><path class="draw" d="M190 199 L199 208 L216 188"/></g></svg></div>
@@ -740,7 +744,7 @@
             <li data-i18n="s7.l2">Отвечает по прайсу и FAQ</li>
             <li data-i18n="s7.l3">Записывает клиентов</li>
           </ul>
-          <div class="price"><div class="cost"><b data-i18n="s7.price">от $500</b></div></div>
+          <div class="price"><div class="cost"><div class="row"><s data-i18n="s7.old">от $500</s><b data-i18n="s7.price">от $350</b></div><span class="off" data-i18n="off.label">−30% за первый заказ</span></div></div>
         </article>
       </div>
 
@@ -1080,19 +1084,19 @@
       "services.lead": "One-off projects and monthly services that cover most of what a small business needs online.",
       "s1.title": "Website", "s1.text": "A modern site that sells and looks great on a phone.",
       "s1.l1": "Design that fits your brand", "s1.l2": "Russian and English versions", "s1.l3": "Lead form and hosting",
-      "s1.price": "from $350",
+      "s1.old": "from $350", "s1.price": "from $245", "off.label": "−30% off your first order",
       "s2.title": "Telegram bot", "s2.text": "A Telegram bot that answers clients and collects orders for you.",
       "s2.l1": "Orders in Telegram, with alerts for you", "s2.l2": "AI answers to common questions", "s2.l3": "CRM and booking can be added",
-      "s2.price": "from $100", "s2.time": "$400 with CRM and booking",
+      "s2.old": "from $100", "s2.price": "from $70", "s2.time": "$280 with CRM and booking",
       "s3.title": "Dashboard", "s3.text": "All your business numbers on one screen, available on your phone.",
       "s3.l1": "Sales, leads, social media", "s3.l2": "Updates automatically", "s3.l3": "Clear charts instead of Excel",
-      "s3.price": "from $300",
+      "s3.old": "from $300", "s3.price": "from $210",
       "s4.title": "AI video", "s4.text": "A 9:16 ad video up to 1 minute for Reels, TikTok and Shorts in a cinematic 3D style.",
       "s4.l1": "Script, frames and animation", "s4.l2": "Voice-over and subtitles", "s4.l3": "Your brand in the shot",
-      "s4.price": "from $100", "s4.time": "$450 for 5 videos",
+      "s4.old": "from $100", "s4.price": "from $70", "s4.time": "$315 for 5 videos",
       "s8.title": "Landing page", "s8.text": "One page built for one goal: a lead, a sale or a booking.",
       "s8.l1": "One clear offer", "s8.l2": "Lead form or booking button", "s8.l3": "Mobile-friendly layout",
-      "s8.price": "from $150",
+      "s8.old": "from $150", "s8.price": "from $105",
       "terms.eyebrow": "Terms", "terms.title": "Working terms",
       "terms.l1": "50% prepayment before the start, the remaining 50% after delivery.",
       "terms.l2": "Combo “website + lead bot”: one price for the site and the bot together.",
@@ -1120,7 +1124,7 @@
       "s6.price": "from $650/mo", "s6.time": "subscription",
       "s7.title": "AI assistant", "s7.text": "A bot that knows your prices and FAQ and books clients by itself.",
       "s7.l1": "In Telegram or on your site", "s7.l2": "Answers from your price list and FAQ", "s7.l3": "Books clients",
-      "s7.price": "from $500",
+      "s7.old": "from $500", "s7.price": "from $350",
       "work.eyebrow": "Work", "work.title": "My own products and projects",
       "work.lead": "Complex systems I built from scratch and use myself.",
       "c1.eyebrow": "AI video · automation",
@@ -1179,30 +1183,30 @@
       "s1.l1": "Дизайн під ваш бренд",
       "s1.l2": "Українська та англійська версії",
       "s1.l3": "Форма заявок і хостинг",
-      "s1.price": "від $350",
+      "s1.old": "від $350", "s1.price": "від $245", "off.label": "−30% на перше замовлення",
       "s2.title": "Telegram-бот",
       "s2.text": "Telegram-бот, який відповідає клієнтам і збирає заявки за вас.",
       "s2.l1": "Заявки в Telegram і сповіщення вам",
       "s2.l2": "Відповіді на часті питання за допомогою ШІ",
       "s2.l3": "Можна підключити CRM і запис",
-      "s2.price": "від $100",
-      "s2.time": "$400 з CRM і записом",
+      "s2.old": "від $100", "s2.price": "від $70",
+      "s2.time": "$280 з CRM і записом",
       "s3.title": "Дашборд",
       "s3.text": "Усі цифри бізнесу на одному екрані, з доступом із телефона.",
       "s3.l1": "Продажі, заявки, соцмережі",
       "s3.l2": "Оновлюється автоматично",
       "s3.l3": "Зрозумілі графіки без Excel",
-      "s3.price": "від $300",
+      "s3.old": "від $300", "s3.price": "від $210",
       "s4.title": "ШІ-відео",
       "s4.text": "Рекламний ролик до 1 хвилини 9:16 для Reels, TikTok і Shorts у кінематографічному 3D-стилі.",
       "s4.l1": "Сценарій, кадри та анімація",
       "s4.l2": "Озвучка і субтитри",
       "s4.l3": "Ваш бренд у кадрі",
-      "s4.price": "від $100",
-      "s4.time": "$450 за 5 роликів",
+      "s4.old": "від $100", "s4.price": "від $70",
+      "s4.time": "$315 за 5 роликів",
       "s8.title": "Лендінг", "s8.text": "Одна сторінка під одну мету: заявка, продаж або запис.",
       "s8.l1": "Один зрозумілий оффер", "s8.l2": "Форма заявки або кнопка запису", "s8.l3": "Адаптив під телефон",
-      "s8.price": "від $150",
+      "s8.old": "від $150", "s8.price": "від $105",
       "terms.eyebrow": "Умови", "terms.title": "Умови роботи",
       "terms.l1": "Передоплата 50% до старту, решта 50% після здачі.",
       "terms.l2": "Комбо «сайт + лід-бот» — одна ціна за сайт і бота разом.",
@@ -1243,7 +1247,7 @@
       "s7.l1": "У Telegram або на сайті",
       "s7.l2": "Відповідає за прайсом і FAQ",
       "s7.l3": "Записує клієнтів",
-      "s7.price": "від $500",
+      "s7.old": "від $500", "s7.price": "від $350",
       "work.eyebrow": "Роботи",
       "work.title": "Власні продукти й проєкти",
       "work.lead": "Складні системи, які я побудував з нуля і використовую сам.",
