@@ -188,17 +188,29 @@
     background: linear-gradient(to bottom, transparent, var(--bg));
     pointer-events: none;
   }
+  /* свечение на глазах: слой такого же размера и с тем же дыханием, что картинка; точки стоят в % от её ширины */
   .eyes {
     position: absolute;
-    left: 50%; top: 51%;
-    width: 50%; height: 22%;
-    transform: translate(-50%, -50%);
-    background: radial-gradient(ellipse at 30% 50%, rgba(124, 77, 255, 0.6), transparent 16%), radial-gradient(ellipse at 72% 50%, rgba(124, 77, 255, 0.6), transparent 16%);
+    left: 0; right: 0;
+    top: 50%;
+    aspect-ratio: 1983 / 793;
+    margin-top: calc(-50% * 793 / 1983);
+    transform-origin: 50% 45%;
+    animation: breathe 18s ease-in-out infinite;
     mix-blend-mode: screen;
-    filter: blur(14px);
-    animation: eyes 5s ease-in-out infinite;
     pointer-events: none;
   }
+  .eyes i {
+    position: absolute;
+    width: 12%; aspect-ratio: 1;
+    margin: -6% 0 0 -6%;
+    border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(224, 212, 255, 0.9), rgba(139, 92, 246, 0.6) 34%, transparent 100%);
+    animation: eyeIn 1.5s ease-out both, eyePulse 3.5s ease-in-out 1.5s infinite;
+  }
+  .eyes.is-paused i { animation-play-state: paused; }
+  .eyes i:first-child { left: 39.55%; top: 49.76%; }
+  .eyes i:last-child { left: 60.75%; top: 49.52%; }
   .scroll-cue {
     position: absolute;
     left: 50%; bottom: 22px;
@@ -210,6 +222,8 @@
   .scroll-cue i { width: 1px; height: 38px; background: linear-gradient(var(--violet-bright), transparent); animation: drip 2.4s ease-in-out infinite; transform-origin: top; }
   @keyframes breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.045); } }
   @keyframes eyes { 0%, 100% { opacity: 0.35; } 50% { opacity: 1; } }
+  @keyframes eyeIn { from { opacity: 0; transform: scale(0.6); } to { opacity: 1; transform: scale(1); } }
+  @keyframes eyePulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.55; transform: scale(0.86); } }
   @keyframes drip { 0% { transform: scaleY(0); opacity: 1; } 70% { transform: scaleY(1); opacity: 1; } 100% { transform: scaleY(1); opacity: 0; } }
 
   /* ---------- intro ---------- */
@@ -555,7 +569,7 @@
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .reveal { opacity: 1; transform: none; filter: none; transition: none; }
-    .banner img, .eyes, .emblem img, .emblem::before, .emblem .ring, .scroll-cue i, .hud-top i, .aurora span, .shiny { animation: none; }
+    .banner img, .eyes, .eyes i, .emblem img, .emblem::before, .emblem .ring, .scroll-cue i, .hud-top i, .aurora span, .shiny { animation: none; }
   }
 
   @media (max-width: 900px) {
@@ -571,7 +585,10 @@
     .lang { margin-left: auto; }
     .brand { font-size: 12px; letter-spacing: 0.34em; }
     .banner img { max-height: none; }
-    .eyes { display: none; }
+    .eyes { top: 0; margin-top: 0; aspect-ratio: 720 / 1279; }
+    .eyes i { width: 11%; margin: -5.5% 0 0 -5.5%; }
+    .eyes i:first-child { left: 41.9%; top: 41.44%; }
+    .eyes i:last-child { left: 58.46%; top: 41.37%; }
     .intro { padding-top: 24px; }
     .emblem { display: none; }
     .services, .services.monthly { grid-template-columns: 1fr; }
@@ -621,7 +638,7 @@
         <source media="(max-width: 720px)" srcset="assets/hero-mobile.webp">
         <img src="assets/hero-wide.webp" alt="Animorphi — AI Content Labs. Ideas transform reality." width="1983" height="793" fetchpriority="high">
       </picture>
-      <div class="eyes" aria-hidden="true"></div>
+      <div class="eyes" aria-hidden="true"><i></i><i></i></div>
     </div>
     <a class="scroll-cue" href="#intro"><span data-i18n="cue">листай</span><i></i></a>
   </div>
@@ -1377,6 +1394,12 @@
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
     }, { threshold: 0.12 });
     document.querySelectorAll(".reveal").forEach(el => io ? io.observe(el) : el.classList.add("in"));
+  }
+
+  // Свечение на глазах hero идёт CSS-циклом (разгорание, затем пульс); пауза, когда hero ушёл с экрана
+  const heroEl = document.querySelector(".banner"), eyesEl = document.querySelector(".eyes");
+  if (heroEl && eyesEl && "IntersectionObserver" in window) {
+    new IntersectionObserver(([e]) => eyesEl.classList.toggle("is-paused", !e.isIntersecting)).observe(heroEl);
   }
 
   // Анимации на GSAP + Lenis (инструменты из рилса: GSAP, Lenis, эффекты в духе React Bits)
