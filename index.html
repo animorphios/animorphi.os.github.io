@@ -1449,11 +1449,10 @@
         scrollTrigger: { trigger: el, start: "top 90%", once: true } });
     });
 
-    // Фон карточек услуг: короткая история процесса, цикл ~4 с.
-    // Есть курсор: играет, пока курсор на карточке. Нет курсора (телефон): играет, пока карточка на экране.
-    const hoverDevice = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-    document.querySelectorAll(".card.service .svc-anim").forEach(scene => {
-      const card = scene.parentElement;
+    // Фон карточек услуг и плашки «Сайт + бот»: короткая история процесса, цикл ~4 с.
+    // Запускается сама, когда блок появляется в экране, на любом устройстве; пауза, когда блок уходит.
+    document.querySelectorAll(".card.service .svc-anim, .combo .svc-anim").forEach(scene => {
+      const box = scene.parentElement;
       const tl = gsap.timeline({ paused: true, repeat: -1, repeatDelay: 0.3 });
       scene.querySelectorAll("g[data-t]").forEach(g => {
         const t = +g.dataset.t;
@@ -1465,38 +1464,10 @@
         });
         g.querySelectorAll(".ring").forEach(r => tl.fromTo(r, { scale: 0.6, opacity: 0.9, transformOrigin: "50% 50%" }, { scale: 2, opacity: 0, duration: 0.7, ease: "power1.out" }, t));
       });
-      tl.to(scene.querySelectorAll("g[data-t]"), { opacity: 0, duration: 0.4, ease: "power1.in" }, 3.4);
+      tl.to(scene.querySelectorAll("g[data-t]"), { opacity: 0, duration: 0.4, ease: "power1.in" }, 3.5);
       const on = () => { scene.classList.add("is-on"); tl.restart(); };
       const off = () => { scene.classList.remove("is-on"); tl.pause(); };
-      if (hoverDevice) {
-        card.addEventListener("mouseenter", on);
-        card.addEventListener("mouseleave", off);
-      } else {
-        ScrollTrigger.create({ trigger: card, start: "top 80%", end: "bottom 20%", onEnter: on, onEnterBack: on, onLeave: off, onLeaveBack: off });
-      }
-    });
-
-    // Блок «Сайт + бот»: сцена играет, пока блок на экране, без наведения. Цикл ~4 с, пауза между циклами.
-    document.querySelectorAll(".combo .svc-anim").forEach(scene => {
-      const box = scene.parentElement;
-      const tl = gsap.timeline({ paused: true, repeat: -1, repeatDelay: 0.3 });
-      scene.querySelectorAll("g[data-t]").forEach(g => {
-        const t = +g.dataset.t;
-        tl.fromTo(g, { opacity: 0, y: 6 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, t);
-        g.querySelectorAll("path.draw").forEach(p => {
-          const len = p.getTotalLength();
-          tl.fromTo(p, { strokeDasharray: len, strokeDashoffset: len }, { strokeDashoffset: 0, duration: 0.8, ease: "power1.inOut" }, t);
-        });
-        g.querySelectorAll(".ring").forEach(r => tl.fromTo(r, { scale: 0.6, opacity: 0.9, transformOrigin: "50% 50%" }, { scale: 2, opacity: 0, duration: 0.7, ease: "power1.out" }, t));
-      });
-      tl.to(scene.querySelectorAll("g[data-t]"), { opacity: 0, duration: 0.4, ease: "power1.in" }, 3.5);
-      ScrollTrigger.create({
-        trigger: box, start: "top 85%", end: "bottom 15%",
-        onEnter: () => { scene.classList.add("is-on"); tl.restart(); },
-        onEnterBack: () => { scene.classList.add("is-on"); tl.restart(); },
-        onLeave: () => { scene.classList.remove("is-on"); tl.pause(); },
-        onLeaveBack: () => { scene.classList.remove("is-on"); tl.pause(); },
-      });
+      ScrollTrigger.create({ trigger: box, start: "top 80%", end: "bottom 20%", onEnter: on, onEnterBack: on, onLeave: off, onLeaveBack: off });
     });
 
     // Мышь: подсветка карточек, наклон кейсов, «магнитные» кнопки (только где есть курсор)
