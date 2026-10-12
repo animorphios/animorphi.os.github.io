@@ -315,6 +315,12 @@
   .svc-anim .t { fill: rgba(196, 181, 253, 0.5); }
   .svc-anim .k { fill: #c4b5fd; fill-opacity: 0.85; }
   .svc-anim .draw { fill: none; stroke: #c4b5fd; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  /* блок «Сайт + бот»: сцена справа, текст и цена поверх неё */
+  .combo { position: relative; overflow: hidden; }
+  .combo > *:not(.svc-anim) { position: relative; z-index: 1; }
+  .combo > .svc-anim { position: absolute; top: 0; left: 50%; right: 12%; bottom: 0; z-index: 0; pointer-events: none; display: none; opacity: 0; transition: opacity 0.35s ease; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 22%, #000 80%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0%, #000 22%, #000 80%, transparent 100%); }
+  .gsap-on .combo > .svc-anim { display: block; }
+  .combo > .svc-anim.is-on { opacity: 0.35; }
   .service .icon {
     width: 48px; height: 48px;
     border-radius: 14px;
@@ -723,6 +729,7 @@
       </div>
 
       <div class="combo reveal">
+        <div class="svc-anim" aria-hidden="true"><svg viewBox="0 0 360 170" preserveAspectRatio="xMidYMid meet"><g data-t="0"><rect class="s" x="0" y="22" width="132" height="120" rx="10"/><rect class="f" x="0" y="22" width="132" height="22" rx="10"/><circle class="k" cx="12" cy="33" r="3"/><circle class="k" cx="22" cy="33" r="3"/></g><g data-t="0.4"><rect class="t" x="14" y="56" width="78" height="6" rx="3"/><rect class="f" x="14" y="70" width="104" height="40" rx="5"/></g><g data-t="0.9"><rect class="k" x="14" y="118" width="54" height="14" rx="7"/><circle class="ring" cx="41" cy="125" r="9" fill="none" stroke="#c4b5fd" stroke-width="1.5"/></g><g data-t="1.2"><path class="draw" d="M146 84 H180 M174 78 L182 84 L174 90"/></g><g data-t="1.8"><rect class="f" x="192" y="26" width="150" height="46" rx="14"/><rect class="t" x="208" y="40" width="118" height="6" rx="3"/><rect class="t" x="208" y="54" width="84" height="6" rx="3"/></g><g data-t="2.3"><path class="draw" d="M267 76 V100 M261 94 L267 100 L273 94"/></g><g data-t="2.7"><rect class="s" x="192" y="104" width="150" height="58" rx="10"/><rect class="k" x="206" y="118" width="62" height="14" rx="7"/><rect class="t" x="206" y="142" width="120" height="6" rx="3"/></g><g data-t="3.1"><circle class="ring" cx="237" cy="125" r="10" fill="none" stroke="#c4b5fd" stroke-width="1.5"/></g></svg></div>
         <div>
           <div class="wide shiny" data-i18n="combo.eyebrow">Выгоднее всего</div>
           <h3 data-i18n="combo.title">Сайт + бот для заявок</h3>
@@ -1467,6 +1474,29 @@
       } else {
         ScrollTrigger.create({ trigger: card, start: "top 80%", end: "bottom 20%", onEnter: on, onEnterBack: on, onLeave: off, onLeaveBack: off });
       }
+    });
+
+    // Блок «Сайт + бот»: сцена играет, пока блок на экране, без наведения. Цикл ~4 с, пауза между циклами.
+    document.querySelectorAll(".combo .svc-anim").forEach(scene => {
+      const box = scene.parentElement;
+      const tl = gsap.timeline({ paused: true, repeat: -1, repeatDelay: 0.3 });
+      scene.querySelectorAll("g[data-t]").forEach(g => {
+        const t = +g.dataset.t;
+        tl.fromTo(g, { opacity: 0, y: 6 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, t);
+        g.querySelectorAll("path.draw").forEach(p => {
+          const len = p.getTotalLength();
+          tl.fromTo(p, { strokeDasharray: len, strokeDashoffset: len }, { strokeDashoffset: 0, duration: 0.8, ease: "power1.inOut" }, t);
+        });
+        g.querySelectorAll(".ring").forEach(r => tl.fromTo(r, { scale: 0.6, opacity: 0.9, transformOrigin: "50% 50%" }, { scale: 2, opacity: 0, duration: 0.7, ease: "power1.out" }, t));
+      });
+      tl.to(scene.querySelectorAll("g[data-t]"), { opacity: 0, duration: 0.4, ease: "power1.in" }, 3.5);
+      ScrollTrigger.create({
+        trigger: box, start: "top 85%", end: "bottom 15%",
+        onEnter: () => { scene.classList.add("is-on"); tl.restart(); },
+        onEnterBack: () => { scene.classList.add("is-on"); tl.restart(); },
+        onLeave: () => { scene.classList.remove("is-on"); tl.pause(); },
+        onLeaveBack: () => { scene.classList.remove("is-on"); tl.pause(); },
+      });
     });
 
     // Мышь: подсветка карточек, наклон кейсов, «магнитные» кнопки (только где есть курсор)
