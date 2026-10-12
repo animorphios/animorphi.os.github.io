@@ -87,7 +87,7 @@
      все буквы — маленькие заглавные, одинаково для RU и EN. Сделано свойством
      шрифта, а не Unicode-символами генератора: у тех нет кириллицы, они
      рисуются чужими шрифтами вперемешку, и их не читают поиск и экранные чтецы. */
-  h1, h2, h3, .sc, .stat b, .price b, .pipeline div, .chips span { font-variant-caps: all-small-caps; letter-spacing: 0.05em; }
+  h1, h2, h3, .sc, .price b, .pipeline div, .chips span { font-variant-caps: all-small-caps; letter-spacing: 0.05em; }
 
   /* ---------- nav ---------- */
   .nav {
@@ -277,11 +277,6 @@
   @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
   @keyframes glow { 0%, 100% { opacity: 0.6; transform: scale(1); } 50% { opacity: 1; transform: scale(1.08); } }
   @keyframes spin { to { transform: rotate(360deg); } }
-
-  .stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 64px; }
-  .stat { border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 22px; background: var(--glass); }
-  .stat b { display: block; font-family: var(--font-display); font-size: 26px; font-weight: 300; letter-spacing: 0.04em; }
-  .stat span { color: var(--text-2); font-size: 14px; font-weight: 300; }
 
   /* ---------- sections ---------- */
   section { padding: 80px 0; }
@@ -590,7 +585,6 @@
     .intro { padding-top: 24px; }
     .emblem { display: none; }
     .services, .services.monthly { grid-template-columns: 1fr; }
-    .stats { grid-template-columns: 1fr; margin-top: 44px; }
     section { padding: 60px 0; }
     .card { padding: 24px; }
     .card.case { padding: 0; }
@@ -658,10 +652,6 @@
           <div class="ring"></div>
           <img src="assets/emblem.webp" alt="" width="760" height="760">
         </div>
-      </div>
-      <div class="stats">
-        <div class="stat reveal"><b class="crystal" data-count="13">13</b><span data-i18n="stats.agents">ИИ-агентов в моём собственном продукте</span></div>
-        <div class="stat reveal"><b class="crystal">RU · UA · EN</b><span data-i18n="stats.langs">языки общения и сайтов</span></div>
       </div>
     </div>
   </section>
@@ -1086,7 +1076,6 @@
       "hero.title": "Websites, automation and <strong class=\"crystal\">AI video</strong> for business",
       "hero.lead": "I build together with AI, so it is faster and cheaper than a studio. From a landing page to a Telegram bot that takes orders for you.",
       "hero.cta1": "Discuss a project", "hero.cta2": "See my work",
-      "stats.agents": "AI agents in my own product", "stats.langs": "languages I work in",
       "services.eyebrow": "Services", "services.title": "What I build for businesses",
       "services.lead": "One-off projects and monthly services that cover most of what a small business needs online.",
       "s1.title": "Website", "s1.text": "A modern site that sells and looks great on a phone.",
@@ -1182,8 +1171,6 @@
       "hero.lead": "Працюю разом зі ШІ, тому швидше й дешевше за студію. Від лендінгу до Telegram-бота, який сам приймає заявки.",
       "hero.cta1": "Обговорити проєкт",
       "hero.cta2": "Дивитися роботи",
-      "stats.agents": "ШІ-агентів у моєму власному продукті",
-      "stats.langs": "мови спілкування та сайтів",
       "services.eyebrow": "Послуги",
       "services.title": "Що я роблю для бізнесу",
       "services.lead": "Разові проєкти та щомісячні послуги, які закривають більшість завдань малого бізнесу онлайн.",
@@ -1453,14 +1440,6 @@
     // Эмблема: появление и лёгкий параллакс
     gsap.from(".emblem", { opacity: 0, scale: 0.85, duration: 1.4, ease: "power3.out", scrollTrigger: { trigger: ".emblem", start: "top 85%", once: true } });
     gsap.fromTo(".emblem", { y: 50 }, { y: -50, ease: "none", scrollTrigger: { trigger: ".intro", start: "top bottom", end: "bottom top", scrub: true } });
-
-    // Счётчик 0 → 13
-    document.querySelectorAll("[data-count]").forEach(el => {
-      const obj = { v: 0 }, end = +el.dataset.count;
-      el.textContent = "0";
-      gsap.to(obj, { v: end, duration: 1.6, ease: "power2.out", onUpdate: () => { el.textContent = Math.round(obj.v); },
-        scrollTrigger: { trigger: el, start: "top 90%", once: true } });
-    });
 
     // Фон карточек услуг и плашки «Сайт + бот»: короткая история процесса, цикл ~4 с.
     // Запускается сама, когда блок появляется в экране, на любом устройстве; пауза, когда блок уходит.
