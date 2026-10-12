@@ -402,12 +402,7 @@
   .soc-big { display: flex; flex-direction: column; justify-content: center; gap: 6px; padding: 26px 28px; }
   .soc-big b { font-family: var(--font-display); font-size: 42px; font-weight: 300; letter-spacing: 0.02em; line-height: 1.1; background: linear-gradient(120deg, #ffffff 0%, var(--violet-bright) 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
   .soc-big span { font-family: var(--font-display); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); }
-  .soc-platforms { grid-column: 1 / -1; display: grid; gap: 14px; padding: 26px 28px; }
-  .soc-platforms .soc-label { font-family: var(--font-display); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); }
-  .soc-row { display: grid; grid-template-columns: 150px 1fr 90px; gap: 16px; align-items: center; font-size: 14px; font-weight: 300; color: var(--text-2); }
-  .soc-row i { display: block; height: 8px; border-radius: 8px; width: var(--w); min-width: 3px; background: linear-gradient(90deg, var(--violet-deep), var(--violet-bright)); box-shadow: 0 0 14px rgba(139, 92, 246, 0.45); }
-  .soc-row b { font-weight: 400; color: #fff; text-align: right; white-space: nowrap; }
-  @media (max-width: 900px) { .soc-stats { grid-template-columns: 1fr; } .soc-row { grid-template-columns: 1fr auto; gap: 8px 12px; } .soc-row span { grid-column: 1; grid-row: 1; } .soc-row b { grid-column: 2; grid-row: 1; } .soc-row i { grid-column: 1 / -1; grid-row: 2; } }
+  @media (max-width: 900px) { .soc-stats { grid-template-columns: 1fr; } }
   .services.monthly { grid-template-columns: repeat(3, 1fr); }
   .combo {
     margin-top: 16px;
@@ -477,9 +472,6 @@
   .step h3 { font-family: var(--font-display); font-size: 19px; font-weight: 400; margin: 16px 0 6px; }
   .step p { color: var(--text-2); font-size: 14px; font-weight: 300; }
 
-  .tools { display: flex; flex-wrap: wrap; gap: 10px; }
-  .tools span { font-family: var(--font-display); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; padding: 10px 15px; border: 1px solid var(--line); border-radius: 12px; background: var(--glass); color: var(--text-2); transition: color 0.2s, border-color 0.2s; }
-  .tools span:hover { color: var(--text); border-color: var(--line-strong); }
 
   /* contact */
   .contact {
@@ -952,14 +944,6 @@
           <b data-i18n="soc.subs">53 595</b>
           <span data-i18n="soc.subscribers">подписчиков</span>
         </div>
-        <div class="card soc-platforms reveal">
-          <div class="soc-label" data-i18n="soc.by">Просмотры по платформам, за всё время</div>
-          <div class="soc-row"><span>TikTok</span><i style="--w: 64.3%"></i><b data-i18n="soc.p1">42,3 млн</b></div>
-          <div class="soc-row"><span>Instagram Reels</span><i style="--w: 31.6%"></i><b data-i18n="soc.p2">20,8 млн</b></div>
-          <div class="soc-row"><span>Facebook</span><i style="--w: 3.2%"></i><b data-i18n="soc.p3">2,1 млн</b></div>
-          <div class="soc-row"><span>Threads</span><i style="--w: 0.8%"></i><b data-i18n="soc.p4">544 тыс.</b></div>
-          <div class="soc-row"><span>YouTube Shorts</span><i style="--w: 0.1%"></i><b data-i18n="soc.p5">29 тыс.</b></div>
-        </div>
       </div>
     </div>
   </section>
@@ -978,12 +962,6 @@
         <div class="card step reveal"><div class="num crystal">04</div><h3 data-i18n="st4.t">Запуск</h3><p data-i18n="st4.p">Запускаю, передаю доступы и объясняю, как всем пользоваться.</p></div>
       </div>
 
-      <div class="section-head reveal" style="margin-top:72px;margin-bottom:22px">
-        <div class="wide" data-i18n="tools.eyebrow">Инструменты</div>
-      </div>
-      <div class="tools reveal">
-        <span>Claude</span><span>Claude Code</span><span>Gemini</span><span>Higgsfield</span><span>Next.js</span><span>Python</span><span>FastAPI</span><span>Firebase</span><span>Telegram Bot API</span><span>Google API</span><span>Remotion</span><span>Figma</span>
-      </div>
     </div>
   </section>
 
@@ -1160,14 +1138,12 @@
       "top.d4": "published 6 March 2026", "top.d5": "published 12 March 2026", "top.watch": "Watch on TikTok ↗",
       "soc.eyebrow": "Social media stats", "soc.lead": "All platforms together, all time. Snapshot from Animorphi analytics.",
       "soc.v": "65.8M", "soc.views": "views", "soc.subs": "53,595", "soc.subscribers": "subscribers",
-      "soc.by": "Views by platform, all time", "soc.p1": "42.3M", "soc.p2": "20.8M", "soc.p3": "2.1M", "soc.p4": "544K", "soc.p5": "29K",
       "chip.1": "AI videos", "chip.2": "Dashboards", "chip.3": "Websites", "chip.4": "Automation", "chip.5": "Telegram bots",
       "process.eyebrow": "Process", "process.title": "Four steps from idea to launch",
       "st1.t": "Quick brief", "st1.p": "Message me on Telegram or WhatsApp, and we sort out the task in 15 minutes.",
       "st2.t": "Price and plan", "st2.p": "I send a fixed price and a plan. 50% upfront.",
       "st3.t": "First version", "st3.p": "I show a working version and we refine it together.",
       "st4.t": "Launch", "st4.p": "I launch it, hand over access and show you how everything works.",
-      "tools.eyebrow": "Tools",
       "contact.eyebrow": "Contact", "contact.title": "Have a task? <span class=\"crystal\">Let’s talk</span>",
       "contact.lead": "Describe what you need in a couple of sentences. I reply within a day with a solution and a price.",
       "contact.socials": "Animorphi on social media",
@@ -1304,7 +1280,6 @@
       "top.watch": "Дивитися в TikTok ↗",
       "soc.eyebrow": "Статистика в соцмережах", "soc.lead": "Усі платформи разом, за весь час. Знімок з аналітики Animorphi.",
       "soc.v": "65,8 млн", "soc.views": "переглядів", "soc.subs": "53 595", "soc.subscribers": "підписників",
-      "soc.by": "Перегляди за платформами, за весь час", "soc.p1": "42,3 млн", "soc.p2": "20,8 млн", "soc.p3": "2,1 млн", "soc.p4": "544 тис.", "soc.p5": "29 тис.",
       "process.eyebrow": "Процес",
       "process.title": "Чотири кроки від ідеї до запуску",
       "st1.t": "Короткий бриф",
@@ -1315,7 +1290,6 @@
       "st3.p": "Показую робочу версію, вносимо правки разом.",
       "st4.t": "Запуск",
       "st4.p": "Запускаю, передаю доступи і пояснюю, як усім користуватися.",
-      "tools.eyebrow": "Інструменти",
       "contact.eyebrow": "Контакти",
       "contact.title": "Є завдання? <span class=\"crystal\">Давайте обговоримо</span>",
       "contact.lead": "Опишіть, що потрібно, у кількох реченнях. Відповім протягом дня і запропоную рішення з ціною.",
