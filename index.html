@@ -308,7 +308,7 @@
   /* фон карточки услуги: короткая история процесса, запускается GSAP (без него не показываем) */
   .card > .svc-anim { position: absolute; top: 0; right: 0; bottom: 0; width: 58%; z-index: 0; pointer-events: none; display: none; opacity: 0; transition: opacity 0.35s ease; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 45%); mask-image: linear-gradient(90deg, transparent 0%, #000 45%); }
   .gsap-on .card > .svc-anim { display: block; }
-  .card > .svc-anim.is-on { opacity: 1; }
+  .card > .svc-anim.is-on { opacity: 0.35; }
   .svc-anim svg { width: 100%; height: 100%; overflow: visible; }
   .svc-anim .s { fill: none; stroke: #a78bfa; stroke-width: 1.6; stroke-opacity: 0.75; }
   .svc-anim .f { fill: rgba(139, 92, 246, 0.16); stroke: rgba(167, 139, 250, 0.4); stroke-width: 1; }
