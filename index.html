@@ -390,14 +390,20 @@
   .client-link:hover { color: #fff; }
   @media (max-width: 900px) { .work.clients { grid-template-columns: 1fr; } }
   .case-shot { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line-strong); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(124, 77, 255, 0.18); }
-  .reel-list { display: grid; gap: 14px; }
-  .card.reel { display: grid; grid-template-columns: 200px 1fr auto; gap: 24px; align-items: center; }
-  .reel .views b { display: block; font-family: var(--font-display); font-size: 34px; font-weight: 300; letter-spacing: 0.02em; white-space: nowrap; }
+  /* Популярные ролики: 4 карточки с беззвучным циклом; 4 колонки от 1200 px, 2 колонки ниже */
+  .reel-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  @media (min-width: 1200px) { .reel-grid { grid-template-columns: repeat(4, 1fr); } }
+  .reel-grid .reel-card { display: flex; flex-direction: column; padding: 12px; }
+  .reel-media { position: relative; aspect-ratio: 3 / 4; max-height: 460px; border-radius: 12px; overflow: hidden; background: #05030a; border: 1px solid var(--line); }
+  .reel-media video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .reel-text { flex: 1; padding: 18px 8px 0; }
+  .reel .views b { display: block; font-family: var(--font-display); font-size: 26px; font-weight: 300; letter-spacing: 0.02em; white-space: nowrap; }
   .reel .views span { font-family: var(--font-display); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); }
-  .reel h3 { font-family: var(--font-display); font-size: 19px; font-weight: 300; letter-spacing: 0.03em; margin: 0 0 6px; }
-  .reel p { color: var(--text-2); font-weight: 300; font-size: 14px; }
-  .reel .client-link { margin: 0; padding: 0; white-space: nowrap; }
-  @media (max-width: 900px) { .card.reel { grid-template-columns: 1fr; gap: 10px; } }
+  .reel h3 { font-family: var(--font-display); font-size: 16px; font-weight: 300; letter-spacing: 0.03em; line-height: 1.35; margin: 12px 0 6px; min-height: 2.7em; }
+  .reel p { color: var(--text-2); font-weight: 300; font-size: 13px; }
+  .reel .client-link { margin: 0; padding: 14px 8px 4px; }
+  @media (min-width: 1200px) { .reel .views b { font-size: 30px; } .reel h3 { font-size: 17px; } }
+  @media (max-width: 720px) { .reel-grid .reel-card { padding: 10px; } .reel-text { padding: 14px 4px 0; } .reel .views b { font-size: 21px; } .reel h3 { font-size: 14px; } .reel p { font-size: 12px; } .reel .client-link { padding: 12px 4px 2px; font-size: 11px; letter-spacing: 0.06em; } }
   .soc-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   .soc-big { display: flex; flex-direction: column; justify-content: center; gap: 6px; padding: 26px 28px; }
   .soc-big b { font-family: var(--font-display); font-size: 42px; font-weight: 300; letter-spacing: 0.02em; line-height: 1.1; background: linear-gradient(120deg, #ffffff 0%, var(--violet-bright) 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
@@ -884,49 +890,65 @@
 
       <div class="subhead reveal">
         <div class="wide" data-i18n="top.eyebrow">Популярные ролики</div>
-        <p data-i18n="top.lead">Топ-5 роликов TikTok по просмотрам. Снимок от 11 октября 2026.</p>
+        <p data-i18n="top.lead">Топ-4 ролика TikTok по просмотрам. Снимок от 11 октября 2026.</p>
       </div>
 
-      <div class="reel-list">
-        <article class="card reel reveal">
-          <div class="views"><b data-i18n="top.v1">16,2 млн</b><span data-i18n="top.views">просмотров</span></div>
+      <div class="reel-grid">
+        <article class="card reel reel-card reveal">
+          <div class="reel-media">
+            <video muted loop playsinline preload="none" poster="assets/clips/clip-1.jpg" aria-hidden="true">
+              <source src="assets/clips/clip-1.webm" type="video/webm">
+              <source src="assets/clips/clip-1.mp4" type="video/mp4">
+            </video>
+          </div>
           <div class="reel-text">
+            <div class="views"><b data-i18n="top.v1">16,2 млн</b><span data-i18n="top.views">просмотров</span></div>
             <h3>Tung Tung Tung Sahur The Father</h3>
             <p data-i18n="top.d1">опубликовано 19 марта 2026</p>
           </div>
           <a class="client-link" href="https://www.tiktok.com/@animorphi/video/7619015879543508255" target="_blank" rel="noopener" data-i18n="top.watch">Смотреть в TikTok ↗</a>
         </article>
-        <article class="card reel reveal">
-          <div class="views"><b data-i18n="top.v2">8,7 млн</b><span data-i18n="top.views">просмотров</span></div>
+        <article class="card reel reel-card reveal">
+          <div class="reel-media">
+            <video muted loop playsinline preload="none" poster="assets/clips/clip-2.jpg" aria-hidden="true">
+              <source src="assets/clips/clip-2.webm" type="video/webm">
+              <source src="assets/clips/clip-2.mp4" type="video/mp4">
+            </video>
+          </div>
           <div class="reel-text">
+            <div class="views"><b data-i18n="top.v2">8,7 млн</b><span data-i18n="top.views">просмотров</span></div>
             <h3>Ballerina Cappuccina gets a little too rich</h3>
             <p data-i18n="top.d2">опубликовано 10 марта 2026</p>
           </div>
           <a class="client-link" href="https://www.tiktok.com/@animorphi/video/7615560716703042847" target="_blank" rel="noopener" data-i18n="top.watch">Смотреть в TikTok ↗</a>
         </article>
-        <article class="card reel reveal">
-          <div class="views"><b data-i18n="top.v3">5,3 млн</b><span data-i18n="top.views">просмотров</span></div>
+        <article class="card reel reel-card reveal">
+          <div class="reel-media">
+            <video muted loop playsinline preload="none" poster="assets/clips/clip-3.jpg" aria-hidden="true">
+              <source src="assets/clips/clip-3.webm" type="video/webm">
+              <source src="assets/clips/clip-3.mp4" type="video/mp4">
+            </video>
+          </div>
           <div class="reel-text">
+            <div class="views"><b data-i18n="top.v3">5,3 млн</b><span data-i18n="top.views">просмотров</span></div>
             <h3>Ballerina’s moms</h3>
             <p data-i18n="top.d3">опубликовано 20 марта 2026</p>
           </div>
           <a class="client-link" href="https://www.tiktok.com/@animorphi/video/7619461963382394142" target="_blank" rel="noopener" data-i18n="top.watch">Смотреть в TikTok ↗</a>
         </article>
-        <article class="card reel reveal">
-          <div class="views"><b data-i18n="top.v4">4,7 млн</b><span data-i18n="top.views">просмотров</span></div>
+        <article class="card reel reel-card reveal">
+          <div class="reel-media">
+            <video muted loop playsinline preload="none" poster="assets/clips/clip-4.jpg" aria-hidden="true">
+              <source src="assets/clips/clip-4.webm" type="video/webm">
+              <source src="assets/clips/clip-4.mp4" type="video/mp4">
+            </video>
+          </div>
           <div class="reel-text">
+            <div class="views"><b data-i18n="top.v4">4,7 млн</b><span data-i18n="top.views">просмотров</span></div>
             <h3>Ballerina cappuccina cooking</h3>
             <p data-i18n="top.d4">опубликовано 6 марта 2026</p>
           </div>
           <a class="client-link" href="https://www.tiktok.com/@animorphi/video/7614267138957675807" target="_blank" rel="noopener" data-i18n="top.watch">Смотреть в TikTok ↗</a>
-        </article>
-        <article class="card reel reveal">
-          <div class="views"><b data-i18n="top.v5">4,1 млн</b><span data-i18n="top.views">просмотров</span></div>
-          <div class="reel-text">
-            <h3>Ballerina cappuccina swap</h3>
-            <p data-i18n="top.d5">опубликовано 12 марта 2026</p>
-          </div>
-          <a class="client-link" href="https://www.tiktok.com/@animorphi/video/7616487994110774558" target="_blank" rel="noopener" data-i18n="top.watch">Смотреть в TikTok ↗</a>
         </article>
       </div>
 
@@ -1132,10 +1154,10 @@
       "tag.marketplace": "Marketplace", "tag.antifraud": "AI anti-fraud", "tag.multilang": "Multilingual",
       "tag.realestate": "Real estate", "tag.valuation": "Free valuation", "tag.german": "German-language site",
       "tag.voiceai": "Voice AI", "tag.crm": "CRM and API", "tag.telephony": "Telephony",
-      "top.eyebrow": "Popular videos", "top.lead": "Top 5 TikTok videos by views. Snapshot from 11 October 2026.",
-      "top.v1": "16.2M", "top.v2": "8.7M", "top.v3": "5.3M", "top.v4": "4.7M", "top.v5": "4.1M", "top.views": "views",
+      "top.eyebrow": "Popular videos", "top.lead": "Top 4 TikTok videos by views. Snapshot from 11 October 2026.",
+      "top.v1": "16.2M", "top.v2": "8.7M", "top.v3": "5.3M", "top.v4": "4.7M", "top.views": "views",
       "top.d1": "published 19 March 2026", "top.d2": "published 10 March 2026", "top.d3": "published 20 March 2026",
-      "top.d4": "published 6 March 2026", "top.d5": "published 12 March 2026", "top.watch": "Watch on TikTok ↗",
+      "top.d4": "published 6 March 2026", "top.watch": "Watch on TikTok ↗",
       "soc.eyebrow": "Social media stats", "soc.lead": "All platforms together, all time. Snapshot from Animorphi analytics.",
       "soc.v": "65.8M", "soc.views": "views", "soc.subs": "53,595", "soc.subscribers": "subscribers",
       "chip.1": "AI videos", "chip.2": "Dashboards", "chip.3": "Websites", "chip.4": "Automation", "chip.5": "Telegram bots",
@@ -1265,18 +1287,16 @@
       "tag.crm": "CRM та API",
       "tag.telephony": "Телефонія",
       "top.eyebrow": "Популярні ролики",
-      "top.lead": "Топ-5 роликів TikTok за переглядами. Знімок від 11 жовтня 2026.",
+      "top.lead": "Топ-4 ролики TikTok за переглядами. Знімок від 11 жовтня 2026.",
       "top.v1": "16,2 млн",
       "top.v2": "8,7 млн",
       "top.v3": "5,3 млн",
       "top.v4": "4,7 млн",
-      "top.v5": "4,1 млн",
       "top.views": "переглядів",
       "top.d1": "опубліковано 19 березня 2026",
       "top.d2": "опубліковано 10 березня 2026",
       "top.d3": "опубліковано 20 березня 2026",
       "top.d4": "опубліковано 6 березня 2026",
-      "top.d5": "опубліковано 12 березня 2026",
       "top.watch": "Дивитися в TikTok ↗",
       "soc.eyebrow": "Статистика в соцмережах", "soc.lead": "Усі платформи разом, за весь час. Знімок з аналітики Animorphi.",
       "soc.v": "65,8 млн", "soc.views": "переглядів", "soc.subs": "53 595", "soc.subscribers": "підписників",
@@ -1368,6 +1388,14 @@
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
     }, { threshold: 0.12 });
     document.querySelectorAll(".reveal").forEach(el => io ? io.observe(el) : el.classList.add("in"));
+  }
+
+  // Ролики: беззвучный цикл играет, только пока карточка в экране; при «уменьшить движение» остаётся постер
+  if (!reduceMotion && "IntersectionObserver" in window) {
+    const reelIO = new IntersectionObserver(entries => entries.forEach(e => {
+      if (e.isIntersecting) e.target.play().catch(() => {}); else e.target.pause();
+    }), { threshold: 0.25 });
+    document.querySelectorAll(".reel-media video").forEach(v => reelIO.observe(v));
   }
 
   // Свечение на глазах hero идёт CSS-циклом (разгорание, затем пульс); пауза, когда hero ушёл с экрана
