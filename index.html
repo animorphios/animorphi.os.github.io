@@ -442,7 +442,7 @@
   .jv-foot kbd { font: inherit; margin-right: calc(4 * var(--u)); padding: 0 calc(5 * var(--u)); border: 1px solid var(--line); border-radius: calc(5 * var(--u)); }
   .beta { display: inline-block; vertical-align: middle; margin-left: 12px; padding: 4px 10px; border-radius: 999px; border: 1px solid var(--violet); background: rgba(139, 92, 246, 0.14); color: var(--violet-bright); font-family: var(--font-display); font-size: 10px; font-weight: 500; font-variant-caps: normal; letter-spacing: 0.16em; text-transform: uppercase; line-height: 1.5; }
   /* Популярные ролики: 4 карточки с беззвучным циклом; 4 колонки от 1200 px, 2 колонки ниже */
-  .reel-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .reel-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 56px; }
   @media (min-width: 1200px) { .reel-grid { grid-template-columns: repeat(4, 1fr); } }
   .reel-grid .reel-card { display: flex; flex-direction: column; padding: 12px; }
   .reel-media { position: relative; aspect-ratio: 3 / 4; max-height: 460px; border-radius: 12px; overflow: hidden; background: #05030a; border: 1px solid var(--line); }
@@ -973,11 +973,6 @@
         </article>
       </div>
 
-      <div class="subhead reveal">
-        <div class="wide" data-i18n="top.eyebrow">Популярные ролики</div>
-        <p data-i18n="top.lead">Топ-4 ролика TikTok по просмотрам. Снимок от 11 октября 2026.</p>
-      </div>
-
       <div class="reel-grid">
         <article class="card reel reel-card reveal">
           <div class="reel-media">
@@ -1255,7 +1250,6 @@
       "tag.marketplace": "Marketplace", "tag.antifraud": "AI anti-fraud", "tag.multilang": "Multilingual",
       "tag.realestate": "Real estate", "tag.valuation": "Free valuation", "tag.german": "German-language site",
       "tag.voiceai": "Voice AI", "tag.crm": "CRM", "tag.telephony": "Telephony",
-      "top.eyebrow": "Popular videos", "top.lead": "Top 4 TikTok videos by views. Snapshot from 11 October 2026.",
       "top.v1": "16.2M", "top.v2": "8.7M", "top.v3": "5.3M", "top.v4": "4.7M", "top.views": "views",
       "top.watch": "Watch on TikTok ↗",
       "soc.eyebrow": "Social media stats", "soc.lead": "All platforms together, all time. Snapshot from Animorphi analytics.",
@@ -1419,8 +1413,6 @@
       "tag.voiceai": "Голосовий ШІ",
       "tag.crm": "CRM",
       "tag.telephony": "Телефонія",
-      "top.eyebrow": "Популярні ролики",
-      "top.lead": "Топ-4 ролики TikTok за переглядами. Знімок від 11 жовтня 2026.",
       "top.v1": "16,2 млн",
       "top.v2": "8,7 млн",
       "top.v3": "5,3 млн",
