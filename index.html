@@ -2,6 +2,11 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
+<script>
+  // Открывать всегда с самого верха: браузер не должен восстанавливать прокрутку при обновлении и возврате назад.
+  // Ставится до разбора страницы, иначе Chromium не применяет режим.
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Animorphi — сайты, автоматизация и AI-видео</title>
 <meta name="description" content="Animorphi AI Content Labs: сайты, автоматизация бизнеса, дашборды и AI-видео. Ideas transform reality.">
@@ -1492,6 +1497,13 @@
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  // Всегда открывать с самого верха: при загрузке, обновлении и возврате назад (режим прокрутки задан в <head>)
+  let lenis = null;
+  const toTop = () => { if (lenis) lenis.scrollTo(0, { immediate: true, force: true }); window.scrollTo(0, 0); };
+  toTop();
+  window.addEventListener("load", toTop);
+  window.addEventListener("pageshow", e => { if (e.persisted) toTop(); });
+
   // Навигация становится стеклянной после начала прокрутки
   const nav = document.getElementById("nav");
   const onScroll = () => nav.classList.toggle("scrolled", window.scrollY > 40);
@@ -1531,7 +1543,7 @@
 
     // Lenis: плавный инерционный скролл, синхронизированный со ScrollTrigger
     if (window.Lenis) {
-      const lenis = new Lenis({ lerp: 0.09, smoothWheel: true, anchors: true });
+      lenis = new Lenis({ lerp: 0.09, smoothWheel: true, anchors: true });
       lenis.on("scroll", ScrollTrigger.update);
       gsap.ticker.add(t => lenis.raf(t * 1000));
       gsap.ticker.lagSmoothing(0);
