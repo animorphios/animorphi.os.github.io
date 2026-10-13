@@ -352,11 +352,11 @@
   .terms-list li::before { content: ""; flex: none; width: 5px; height: 5px; transform: rotate(45deg) translateY(-2px); background: var(--violet-bright); box-shadow: 0 0 8px var(--violet); }
   .faq-item h3 { font-family: var(--font-display); font-size: 18px; font-weight: 400; line-height: 1.35; margin-bottom: 10px; }
   .faq-item p { color: var(--text-2); font-size: 15px; font-weight: 300; }
-  .price { margin-top: auto; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-top: 18px; border-top: 1px solid rgba(196, 181, 253, 0.08); }
+  .price { margin-top: auto; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px; padding-top: 18px; border-top: 1px solid rgba(196, 181, 253, 0.08); }
   .price b { font-family: var(--font-display); font-size: 26px; font-weight: 400; white-space: nowrap; }
   .price span { font-family: var(--font-display); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-3); }
   .price .cost { display: flex; flex-direction: column; gap: 4px; }
-  .price .side { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; text-align: right; }
+  .price .side { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; text-align: right; white-space: nowrap; }
   .price .row { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 12px; }
   .price s { font-family: var(--font-display); font-size: 16px; font-weight: 300; color: var(--text-3); text-decoration-thickness: 1px; }
   .price .side s { font-size: 12px; letter-spacing: 0.12em; margin-right: 4px; }
